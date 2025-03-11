@@ -1,8 +1,20 @@
 ---
-title: Welcome to my website
-feature_image: "https://picsum.photos/1300/400?image=989"
-feature_text: |
-  ## Hello world
+layout: page
+title: Home
 ---
 
-There isn't much going on here yet, but watch this space
+# Welcome to Style Transfer Lab
+
+We work on cutting-edge computer vision research. Check out some of our recent papers:
+
+## Featured Papers
+
+- **[Title of a Key Paper](#)**  
+  *Authors:* A. Researcher, B. Scientist  
+  *Abstract:* A short preview. [Read more →](/papers/)
+
+- **[Another Paper](#)**  
+  *Authors:* C. Person, D. Expert  
+  *Abstract:* Summary here. [Read more →](/papers/)
+
+More publications: [See all papers →](/papers/)

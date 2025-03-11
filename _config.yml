@@ -43,7 +43,7 @@ navigation_header:
 
 # Footer nav
 navigation_footer:
-- title: Back to top
+- title: Back to main
   url: "#top"
 
 # Collections
