@@ -5,16 +5,20 @@ title: Home
 
 # Welcome to Style Transfer Lab
 
-We work on cutting-edge computer vision research. Check out some of our recent papers:
+We specialize in **computer vision research**, focusing on style transfer, generative models, and deep learning. 
 
-## Featured Papers
+## 🔬 Recent Papers
+{% for paper in site.papers limit:3 %}
+- **[{{ paper.title }}]({{ paper.url }})**  
+  *{{ paper.authors }}* - {{ paper.conference }}
+  *Abstract:* {{ paper.excerpt | strip_html }}  
+{% endfor %}
 
-- **[Title of a Key Paper](#)**  
-  *Authors:* A. Researcher, B. Scientist  
-  *Abstract:* A short preview. [Read more →](/papers/)
+📖 **More publications**: [See all papers →](/papers/)
 
-- **[Another Paper](#)**  
-  *Authors:* C. Person, D. Expert  
-  *Abstract:* Summary here. [Read more →](/papers/)
+## ✍️ Latest Blog Posts
+{% for post in site.posts limit:3 %}
+- **[{{ post.title }}]({{ post.url }})** ({{ post.date | date: "%B %d, %Y" }})
+{% endfor %}
 
-More publications: [See all papers →](/papers/)
+[See all posts →](/blog/)
