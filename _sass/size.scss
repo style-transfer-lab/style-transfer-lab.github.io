@@ -1,0 +1,20 @@
+@mixin desktoptab {
+  @media screen and (min-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: #{$mobile-breakpoint}) {
+    @content;
+  }
+}
+
+.mobile {
+    display: none;
+}
+
+@media screen and (max-width: #{$mobile-breakpoint}) {
+      .mobile {display: block;}
+      .desktop {display: none;}
+}

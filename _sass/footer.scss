@@ -1,0 +1,21 @@
+@import "size";
+
+.site-footer {
+  padding-top: 1.0rem;
+  padding-bottom: 1.0rem;
+  background-color: $footer-bg-color;
+}
+
+.site-footer-content {
+  color: $footer-text-color;
+  font-weight: $footer-font-weight;
+  text-align: center;
+
+  @include desktoptab {
+    font-size: $footer-font-size;
+  }
+
+  @include mobile {
+    font-size: $footer-font-size-mobile;
+  }
+}
