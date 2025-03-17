@@ -11,7 +11,7 @@ We specialize in **computer vision research**, focusing on style transfer, gener
 {% for paper in site.papers limit:3 %}
 - **[{{ paper.title }}]({{ paper.url }})**  
   *{{ paper.authors }}* - {{ paper.conference }}
-  *Abstract:* {{ paper.excerpt | strip_html }}  
+  <!-- *Abstract:* {{ paper.excerpt | strip_html }}   -->
 {% endfor %}
 
 📖 **More publications**: [See all papers →](/papers/)
