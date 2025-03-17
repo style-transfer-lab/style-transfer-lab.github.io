@@ -4,9 +4,10 @@ title: Papers
 permalink: /papers/
 ---
 
-# 📄 Research Papers
+📄 Research Papers
 
 {% for paper in site.papers %}
-## [{{ paper.title }}]({{ paper.url }})
-**Authors:** {{ paper.authors }}  
+<h3><a href="{{ paper.url }}">{{ paper.title }}</a></h3>
+<p><strong>Authors:</strong> {{ paper.authors }}</p>
+<p><strong>Abstract:</strong> {{ paper.abstract | markdownify }}</p>
 {% endfor %}
