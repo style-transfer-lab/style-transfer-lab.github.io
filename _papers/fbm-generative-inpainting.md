@@ -1,14 +1,16 @@
 ---
 layout: paper
-title: "Hessian Geometry of Latent Space in Generative Models"
-authors: "Alexander Lobashev, Dmitry Guskov, Maria Larchenko, Mikhail Tamm"
-conference: "ICML 2025"
-permalink: /papers/hessian-geometry-latent-space/
+title: "fBm-Based Generative Inpainting for the Reconstruction of Chromosomal Distances"
+authors: "Alexander Lobashev, Dmitry Guskov, Kirill Polovnikov"
+conference: "ML4PS at NeurIPS"
+permalink: /papers/fbm-generative-inpainting/
 ---
 
 ## Abstract  
-This paper presents a novel method for analyzing the latent space geometry of generative models, including statistical physics models and diffusion models, by reconstructing the Fisher information metric. The method approximates the posterior distribution of latent variables given generated samples and uses this to learn the log-partition function, which defines the Fisher metric for exponential families. 
+Fractional Brownian motion (fBm) features both randomness and strong scale-free correlations, challenging generative models to reproduce the intrinsic memory characterizing the underlying stochastic process. 
 
-Theoretical convergence guarantees are provided, and the method is validated on the Ising and TASEP models, outperforming existing baselines in reconstructing thermodynamic quantities. Applied to diffusion models, the method reveals a fractal structure of phase transitions in the latent space, characterized by abrupt changes in the Fisher metric. 
+Here we examine a zoo of diffusion-based inpainting methods on a specific dataset of corrupted images, which represent incomplete Euclidean distance matrices (EDMs) of fBm at various memory exponents. Our dataset implies uniqueness of the data imputation in the regime of low missing ratio, providing the unique ground truth for the inpainting. 
 
-We demonstrate that while geodesic interpolations are approximately linear within individual phases, this linearity breaks down at phase boundaries, where the diffusion model exhibits a divergent Lipschitz constant with respect to the latent space. These findings provide new insights into the complex structure of diffusion model latent spaces and their connection to phenomena like phase transitions.
+We find that conditional diffusion generation readily reproduces the built-in correlations of fBm paths in different memory regimes (i.e., for sub-, Brownian, and super-diffusion trajectories), providing a robust tool for statistical imputation at high missing ratios. 
+
+As a biological application, we apply our fBm-trained diffusion model for the imputation of microscopy-derived distance matrices of chromosomal segments (Fluorescence In Situ Hybridization data)—incomplete due to experimental imperfections—and demonstrate its superiority over the standard approaches used in bioinformatics.

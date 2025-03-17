@@ -1,12 +1,14 @@
 ---
 layout: paper
-title: "Color Conditional Generation with Sliced Wasserstein Distance"
-authors: "Alexander Lobashev, Dmitry Guskov, Maria Larchenko"
-conference: "CVPR 2025"
-permalink: /papers/color-conditional-generation/
+title: "Color Transfer with Modulated Flows"
+authors: "Maria Larchenko, Alexander Lobashev, Dmitry Guskov, Vladimir Vladimirovich Palyulin"
+conference: "AAAI 2025"
+permalink: /papers/color-transfer-modflows/
 ---
 
 ## Abstract  
-We propose SW-Guidance, a training-free approach for image generation conditioned on the color distribution of a reference image. While it is possible to generate an image with fixed colors by first creating an image from a text prompt and then applying a color style transfer method, this approach often results in semantically meaningless colors in the generated image. 
+In this work, we introduce Modulated Flows (ModFlows), a novel approach for color transfer between images based on rectified flows. The primary goal of color transfer is to adjust the colors of a target image to match the color distribution of a reference image. 
 
-Our method solves this problem by modifying the sampling process of a diffusion model to incorporate the differentiable Sliced 1-Wasserstein distance between the color distribution of the generated image and the reference palette. Our method outperforms state-of-the-art techniques for color-conditional generation in terms of color similarity to the reference, producing images that not only match the reference colors but also maintain semantic coherence with the original text prompt.
+Our technique is based on optimal transport and executes color transfer as an invertible transformation within the RGB color space. ModFlows utilizes the bijective property of flows, enabling us to introduce a common intermediate color distribution and build a dataset of rectified flows. We train an encoder on this dataset to predict the weights of a rectified model for new images. 
+
+After training on a set of optimal transport plans, our approach can generate optimal plans for new pairs of distributions without additional fine-tuning. We additionally show that the trained encoder provides an image embedding, associated only with its color style. The presented method is capable of processing 4K images and achieves state-of-the-art performance in terms of content and style similarity.
