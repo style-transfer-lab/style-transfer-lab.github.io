@@ -38,10 +38,10 @@ navigation_header:
   url: /
 - title: Papers
   url: /papers/
-- title: About
-  url: /about/
 - title: Blog
   url: /blog/
+- title: About
+  url: /about/
 
 
 # Footer nav
@@ -80,3 +80,10 @@ defaults:
       type: "pages"
     values:
       layout: page # Set the default layout for pages
+
+  - 
+    scope:
+      path: ""
+      type: "papers"
+    values:
+      layout: paper # Set the default layout for papers

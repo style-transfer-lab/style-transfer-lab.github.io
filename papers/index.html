@@ -1,20 +1,6 @@
 ---
-layout: page
+layout: blog
+collectionpage: papers
 title: Papers
 permalink: /papers/
 ---
-
-## 📝 Research Papers
-
-<!-- {% for paper in site.papers %}
-- **[{{ paper.title }}]({{ paper.url }})**  
-  *Authors:* {{ paper.authors }}  
-  *Conference:* {{ paper.conference }}
-{% endfor %} -->
-
-
-{% for paper in site.papers %}
-- **[{{ paper.title }}]({{ paper.url }})**  
-  *{{ paper.authors }}* - {{ paper.conference }}
-  *Abstract:* {{ paper.excerpt | strip_html }}  
-{% endfor %}
