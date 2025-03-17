@@ -9,5 +9,5 @@ permalink: /papers/
 {% for paper in site.papers %}
 <h3><a href="{{ paper.url }}">{{ paper.title }}</a></h3>
 <p><strong>Authors:</strong> {{ paper.authors }}</p>
-<p><strong>Abstract:</strong> {{ paper.abstract | markdownify }}</p>
+<p><strong>Abstract:</strong> {{ paper.abstract}}</p>
 {% endfor %}
