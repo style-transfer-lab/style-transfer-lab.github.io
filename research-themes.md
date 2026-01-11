@@ -30,7 +30,59 @@ Color and style transfer lies at the heart of our research. We develop novel mat
 
 {% for paper in site.papers %}
   {% if paper.tags contains 'color-transfer' or paper.tags contains 'style-transfer' %}
-    {% include paper-card.html paper=paper %}
+    <!-- Paper Card (inlined to avoid GitHub Pages include recursion limits) -->
+    <div class="paper-card">
+      {% if paper.image %}
+        <img src="{{ paper.image }}" alt="{{ paper.title }}" class="paper-card-image">
+      {% else %}
+        <div class="paper-card-image" style="background: linear-gradient(135deg, #2196F3, #9C27B0);"></div>
+      {% endif %}
+      
+      <div class="paper-card-content">
+        <h3 class="paper-card-title">
+          <a href="{{ paper.url }}">{{ paper.title }}</a>
+        </h3>
+        
+        <div class="paper-card-authors">
+          {{ paper.authors }}
+        </div>
+        
+        <div class="paper-card-meta">
+          {% if paper.conference %}
+            {% assign conf_lower = paper.conference | downcase %}
+            {% if conf_lower contains 'cvpr' %}
+              <span class="venue-badge cvpr">CVPR {{ paper.year }}</span>
+            {% elsif conf_lower contains 'icml' %}
+              <span class="venue-badge icml">ICML {{ paper.year }}</span>
+            {% elsif conf_lower contains 'aaai' %}
+              <span class="venue-badge aaai">AAAI {{ paper.year }}</span>
+            {% elsif conf_lower contains 'neurips' %}
+              <span class="venue-badge neurips">NeurIPS {{ paper.year }}</span>
+            {% elsif paper.venue_type == 'conference' %}
+              <span class="venue-badge conference">{{ paper.conference }}</span>
+            {% else %}
+              <span class="venue-badge workshop">{{ paper.conference }}</span>
+            {% endif %}
+          {% endif %}
+          
+          {% if paper.year %}
+            <span class="year-badge">{{ paper.year }}</span>
+          {% endif %}
+        </div>
+        
+        {% if paper.tags %}
+          <div class="tags">
+            {% for tag in paper.tags limit:3 %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <p class="paper-card-abstract">
+          {{ paper.abstract | strip_html | truncatewords: 30 }}
+        </p>
+      </div>
+    </div>
   {% endif %}
 {% endfor %}
 
@@ -60,7 +112,59 @@ We advance the understanding and capabilities of generative models, particularly
 
 {% for paper in site.papers %}
   {% if paper.tags contains 'diffusion-models' or paper.tags contains 'generative-models' %}
-    {% include paper-card.html paper=paper %}
+    <!-- Paper Card (inlined to avoid GitHub Pages include recursion limits) -->
+    <div class="paper-card">
+      {% if paper.image %}
+        <img src="{{ paper.image }}" alt="{{ paper.title }}" class="paper-card-image">
+      {% else %}
+        <div class="paper-card-image" style="background: linear-gradient(135deg, #2196F3, #9C27B0);"></div>
+      {% endif %}
+      
+      <div class="paper-card-content">
+        <h3 class="paper-card-title">
+          <a href="{{ paper.url }}">{{ paper.title }}</a>
+        </h3>
+        
+        <div class="paper-card-authors">
+          {{ paper.authors }}
+        </div>
+        
+        <div class="paper-card-meta">
+          {% if paper.conference %}
+            {% assign conf_lower = paper.conference | downcase %}
+            {% if conf_lower contains 'cvpr' %}
+              <span class="venue-badge cvpr">CVPR {{ paper.year }}</span>
+            {% elsif conf_lower contains 'icml' %}
+              <span class="venue-badge icml">ICML {{ paper.year }}</span>
+            {% elsif conf_lower contains 'aaai' %}
+              <span class="venue-badge aaai">AAAI {{ paper.year }}</span>
+            {% elsif conf_lower contains 'neurips' %}
+              <span class="venue-badge neurips">NeurIPS {{ paper.year }}</span>
+            {% elsif paper.venue_type == 'conference' %}
+              <span class="venue-badge conference">{{ paper.conference }}</span>
+            {% else %}
+              <span class="venue-badge workshop">{{ paper.conference }}</span>
+            {% endif %}
+          {% endif %}
+          
+          {% if paper.year %}
+            <span class="year-badge">{{ paper.year }}</span>
+          {% endif %}
+        </div>
+        
+        {% if paper.tags %}
+          <div class="tags">
+            {% for tag in paper.tags limit:3 %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <p class="paper-card-abstract">
+          {{ paper.abstract | strip_html | truncatewords: 30 }}
+        </p>
+      </div>
+    </div>
   {% endif %}
 {% endfor %}
 
@@ -90,7 +194,59 @@ We translate our theoretical insights into practical applications that address r
 
 {% for paper in site.papers %}
   {% if paper.tags contains 'virtual-try-on' or paper.tags contains 'fashion-ai' or paper.tags contains 'scientific-applications' or paper.tags contains 'bioinformatics' %}
-    {% include paper-card.html paper=paper %}
+    <!-- Paper Card (inlined to avoid GitHub Pages include recursion limits) -->
+    <div class="paper-card">
+      {% if paper.image %}
+        <img src="{{ paper.image }}" alt="{{ paper.title }}" class="paper-card-image">
+      {% else %}
+        <div class="paper-card-image" style="background: linear-gradient(135deg, #2196F3, #9C27B0);"></div>
+      {% endif %}
+      
+      <div class="paper-card-content">
+        <h3 class="paper-card-title">
+          <a href="{{ paper.url }}">{{ paper.title }}</a>
+        </h3>
+        
+        <div class="paper-card-authors">
+          {{ paper.authors }}
+        </div>
+        
+        <div class="paper-card-meta">
+          {% if paper.conference %}
+            {% assign conf_lower = paper.conference | downcase %}
+            {% if conf_lower contains 'cvpr' %}
+              <span class="venue-badge cvpr">CVPR {{ paper.year }}</span>
+            {% elsif conf_lower contains 'icml' %}
+              <span class="venue-badge icml">ICML {{ paper.year }}</span>
+            {% elsif conf_lower contains 'aaai' %}
+              <span class="venue-badge aaai">AAAI {{ paper.year }}</span>
+            {% elsif conf_lower contains 'neurips' %}
+              <span class="venue-badge neurips">NeurIPS {{ paper.year }}</span>
+            {% elsif paper.venue_type == 'conference' %}
+              <span class="venue-badge conference">{{ paper.conference }}</span>
+            {% else %}
+              <span class="venue-badge workshop">{{ paper.conference }}</span>
+            {% endif %}
+          {% endif %}
+          
+          {% if paper.year %}
+            <span class="year-badge">{{ paper.year }}</span>
+          {% endif %}
+        </div>
+        
+        {% if paper.tags %}
+          <div class="tags">
+            {% for tag in paper.tags limit:3 %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <p class="paper-card-abstract">
+          {{ paper.abstract | strip_html | truncatewords: 30 }}
+        </p>
+      </div>
+    </div>
   {% endif %}
 {% endfor %}
 
@@ -120,7 +276,59 @@ Strong theoretical foundations underpin all our work. We develop rigorous mathem
 
 {% for paper in site.papers %}
   {% if paper.tags contains 'theoretical-foundations' or paper.tags contains 'latent-space-geometry' or paper.tags contains 'fisher-information' or paper.tags contains 'statistical-physics' %}
-    {% include paper-card.html paper=paper %}
+    <!-- Paper Card (inlined to avoid GitHub Pages include recursion limits) -->
+    <div class="paper-card">
+      {% if paper.image %}
+        <img src="{{ paper.image }}" alt="{{ paper.title }}" class="paper-card-image">
+      {% else %}
+        <div class="paper-card-image" style="background: linear-gradient(135deg, #2196F3, #9C27B0);"></div>
+      {% endif %}
+      
+      <div class="paper-card-content">
+        <h3 class="paper-card-title">
+          <a href="{{ paper.url }}">{{ paper.title }}</a>
+        </h3>
+        
+        <div class="paper-card-authors">
+          {{ paper.authors }}
+        </div>
+        
+        <div class="paper-card-meta">
+          {% if paper.conference %}
+            {% assign conf_lower = paper.conference | downcase %}
+            {% if conf_lower contains 'cvpr' %}
+              <span class="venue-badge cvpr">CVPR {{ paper.year }}</span>
+            {% elsif conf_lower contains 'icml' %}
+              <span class="venue-badge icml">ICML {{ paper.year }}</span>
+            {% elsif conf_lower contains 'aaai' %}
+              <span class="venue-badge aaai">AAAI {{ paper.year }}</span>
+            {% elsif conf_lower contains 'neurips' %}
+              <span class="venue-badge neurips">NeurIPS {{ paper.year }}</span>
+            {% elsif paper.venue_type == 'conference' %}
+              <span class="venue-badge conference">{{ paper.conference }}</span>
+            {% else %}
+              <span class="venue-badge workshop">{{ paper.conference }}</span>
+            {% endif %}
+          {% endif %}
+          
+          {% if paper.year %}
+            <span class="year-badge">{{ paper.year }}</span>
+          {% endif %}
+        </div>
+        
+        {% if paper.tags %}
+          <div class="tags">
+            {% for tag in paper.tags limit:3 %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        <p class="paper-card-abstract">
+          {{ paper.abstract | strip_html | truncatewords: 30 }}
+        </p>
+      </div>
+    </div>
   {% endif %}
 {% endfor %}
 
