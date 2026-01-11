@@ -3,6 +3,11 @@ title: About Us
 layout: page
 ---
 
+<!-- Team Photo -->
+<div style="text-align: center; margin: 40px 0 60px;">
+  <img src="/assets/images/team_gen.png" alt="Style Transfer Lab Team" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
+</div>
+
 ## Our Mission
 
 Style Transfer Lab is a collaborative research group pushing the boundaries of generative AI. We specialize in developing innovative methods for color transfer, style transfer, and diffusion models that bridge theoretical foundations with practical applications.

@@ -144,6 +144,12 @@ title: Home
 <section style="margin: 80px 0;">
   <div style="background: white; padding: 60px 40px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);">
     <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 30px; color: #212121;">About Our Lab</h2>
+    
+    <!-- Team Photo -->
+    <div style="text-align: center; margin-bottom: 40px;">
+      <img src="/assets/images/team_gen_small.png" alt="Style Transfer Lab Team" style="max-width: 500px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
+    </div>
+    
     <p style="text-align: center; color: #757575; font-size: 1.2em; line-height: 1.8; max-width: 800px; margin: 0 auto 40px;">
       Style Transfer Lab is a collaborative research group specializing in generative AI, with a focus on color transfer, style transfer, and diffusion models. We bridge the gap between theoretical understanding and practical applications, developing innovative methods that appear in top-tier computer vision and machine learning venues.
     </p>
