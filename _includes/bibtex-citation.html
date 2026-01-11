@@ -1,0 +1,27 @@
+<!-- BibTeX Citation Component 
+     Usage: {% include bibtex-citation.html bibtex=page.bibtex %}
+-->
+{% if include.bibtex %}
+<div class="bibtex-section">
+  <h3>📋 Citation</h3>
+  <div class="bibtex-container">
+    <button class="copy-bibtex-btn" onclick="copyBibtex(this)">Copy BibTeX</button>
+    <pre class="bibtex-code"><code>{{ include.bibtex }}</code></pre>
+  </div>
+</div>
+
+<script>
+function copyBibtex(button) {
+  const bibtexCode = button.nextElementSibling.textContent;
+  navigator.clipboard.writeText(bibtexCode).then(() => {
+    const originalText = button.textContent;
+    button.textContent = '✓ Copied!';
+    button.classList.add('copied');
+    setTimeout(() => {
+      button.textContent = originalText;
+      button.classList.remove('copied');
+    }, 2000);
+  });
+}
+</script>
+{% endif %}

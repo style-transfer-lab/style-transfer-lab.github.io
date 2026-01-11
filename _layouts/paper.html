@@ -4,24 +4,117 @@ layout: default
 
 {% include site-header.html %}
 
-<!-- Paper header with an image -->
-<div style="background-color: #f5f5f5; padding: 20px 0; text-align: center;">
-  {% if page.image %}
-    <img src="{{ page.image }}" alt="{{ page.title }}" style="max-width: 70%; height: auto; margin-bottom: 20px;">
-  {% else %}
-    <img src="/assets/images/default-paper-image.jpg" alt="{{ page.title }}" style="max-width: 70%; height: auto; margin-bottom: 20px;">
-  {% endif %}
-  <h1 style="color: #333; font-size: 2.5em;">{{ page.title }}</h1>
+<!-- Paper hero section -->
+<div style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%); padding: 40px 20px; margin-bottom: 40px;">
+  <div style="max-width: 1200px; margin: 0 auto;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+      
+      <!-- Left: Image -->
+      <div style="text-align: center;">
+        {% if page.image %}
+          <img src="{{ page.image }}" alt="{{ page.title }}" style="max-width: 100%; height: auto; border-radius: 12px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);">
+        {% else %}
+          <div style="width: 100%; aspect-ratio: 16/9; background: linear-gradient(135deg, #2196F3, #9C27B0); border-radius: 12px;"></div>
+        {% endif %}
+      </div>
+      
+      <!-- Right: Metadata -->
+      <div>
+        <h1 style="font-size: 2.5em; margin-bottom: 16px; color: #212121; line-height: 1.2;">{{ page.title }}</h1>
+        
+        <p style="font-size: 1.1em; color: #757575; margin-bottom: 12px;">
+          <strong>Authors:</strong> {{ page.authors }}
+        </p>
+        
+        <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap; margin-bottom: 20px;">
+          {% if page.conference %}
+            {% assign conf_lower = page.conference | downcase %}
+            {% if conf_lower contains 'cvpr' %}
+              <span class="venue-badge cvpr">CVPR {{ page.year }}</span>
+            {% elsif conf_lower contains 'icml' %}
+              <span class="venue-badge icml">ICML {{ page.year }}</span>
+            {% elsif conf_lower contains 'aaai' %}
+              <span class="venue-badge aaai">AAAI {{ page.year }}</span>
+            {% elsif conf_lower contains 'neurips' %}
+              <span class="venue-badge neurips">NeurIPS {{ page.year }}</span>
+            {% elsif page.venue_type == 'conference' %}
+              <span class="venue-badge conference">{{ page.conference }}</span>
+            {% else %}
+              <span class="venue-badge workshop">{{ page.conference }}</span>
+            {% endif %}
+          {% endif %}
+          
+          {% if page.year %}
+            <span class="year-badge">{{ page.year }}</span>
+          {% endif %}
+        </div>
+        
+        {% if page.tags %}
+          <div class="tags">
+            {% for tag in page.tags %}
+              <span class="tag">{{ tag }}</span>
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  </div>
 </div>
 
 <!-- Paper content -->
-<div style="background-color: white; max-width: 800px; margin: 40px auto; padding: 30px; border-radius: 10px; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
-  <p><strong>Authors:</strong> {{ page.authors }}</p>
-  <p><strong>Conference:</strong> {{ page.conference }}</p>
-  <hr>
-  <div style="font-size: 1.1em; line-height: 1.6;">
+<div style="max-width: 900px; margin: 0 auto; padding: 0 20px 60px;">
+  
+  <!-- Key Contributions -->
+  {% if page.key_contributions %}
+    <div class="key-contributions">
+      <h3>🎯 Key Contributions</h3>
+      <ul>
+        {% for contribution in page.key_contributions %}
+          <li>{{ contribution }}</li>
+        {% endfor %}
+      </ul>
+    </div>
+  {% endif %}
+  
+  <!-- Resource Links -->
+  {% include resource-links.html paper=page %}
+  
+  <!-- Main Content -->
+  <div style="font-size: 1.1em; line-height: 1.8; margin-top: 40px;">
     {{ content }}
   </div>
+  
+  <!-- BibTeX Citation -->
+  {% include bibtex-citation.html bibtex=page.bibtex %}
+  
+  <!-- Related Papers -->
+  {% if page.related_papers %}
+    <div class="related-papers">
+      <h3>🔗 Related Papers from Our Lab</h3>
+      <div class="related-papers-list">
+        {% for paper_slug in page.related_papers %}
+          {% for paper in site.papers %}
+            {% assign paper_permalink = paper.permalink | remove: '/papers/' | remove: '/' %}
+            {% if paper_permalink == paper_slug %}
+              <div class="related-paper-item">
+                <a href="{{ paper.url }}">{{ paper.title }}</a>
+              </div>
+            {% endif %}
+          {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endif %}
+  
 </div>
+
+<!-- Responsive adjustments -->
+<style>
+  @media (max-width: 768px) {
+    div[style*="grid-template-columns: 1fr 1fr"] {
+      grid-template-columns: 1fr !important;
+    }
+  }
+</style>
 
 {% include site-footer.html %}

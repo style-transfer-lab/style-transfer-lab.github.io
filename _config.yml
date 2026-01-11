@@ -24,7 +24,7 @@ plugins:
 # url: 'https://mydomain.com'
 baseurl: ''
 title: 'Style Transfer Lab'
-description: 'This is my new website'
+description: 'Advancing Generative AI Research Through Color Transfer, Style Transfer, and Diffusion Models'
 permalink: pretty
 # logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
 
@@ -36,12 +36,14 @@ paginate_path: blog/page:num
 navigation_header:
 - title: Home
   url: /
-- title: Papers
+- title: Research
   url: /papers/
+- title: Themes
+  url: /research-themes/
+- title: Team
+  url: /about/
 - title: Blog
   url: /blog/
-- title: About
-  url: /about/
 
 
 # Footer nav

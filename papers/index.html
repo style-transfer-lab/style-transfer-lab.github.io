@@ -1,13 +1,162 @@
 ---
 layout: page
-title: Papers
+title: Research Publications
 permalink: /papers/
 ---
 
-📄 Research Papers
+<!-- Statistics Banner -->
+<div class="stats-banner">
+  <h2>Our Research Impact</h2>
+  <div class="stats-items">
+    <div class="stat-item">
+      <span class="stat-number">{{ site.papers | size }}</span>
+      <span class="stat-label">Publications</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">
+        {% assign conference_count = 0 %}
+        {% for paper in site.papers %}
+          {% if paper.venue_type == 'conference' %}
+            {% assign conference_count = conference_count | plus: 1 %}
+          {% endif %}
+        {% endfor %}
+        {{ conference_count }}
+      </span>
+      <span class="stat-label">Top-Tier Conferences</span>
+    </div>
+    <div class="stat-item">
+      <span class="stat-number">
+        {% assign years = site.papers | map: 'year' | uniq | size %}
+        {{ years }}
+      </span>
+      <span class="stat-label">Years Active</span>
+    </div>
+  </div>
+</div>
 
-{% for paper in site.papers %}
-<h3><a href="{{ paper.url }}">{{ paper.title }}</a></h3>
-<p><strong>Authors:</strong> {{ paper.authors }}</p>
-<p><strong>Abstract:</strong> {{ paper.abstract}}</p>
-{% endfor %}
+<!-- Filter Section -->
+<div class="filter-section">
+  <div class="filter-controls">
+    <input type="text" id="searchBox" class="search-box" placeholder="🔍 Search papers by title, authors, or keywords...">
+    
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-filter="all" onclick="filterPapers('all')">All Papers</button>
+      <button class="filter-btn" data-filter="conference" onclick="filterPapers('conference')">Conferences</button>
+      <button class="filter-btn" data-filter="workshop" onclick="filterPapers('workshop')">Workshops</button>
+      <button class="filter-btn" data-filter="2025" onclick="filterPapers('2025')">2025</button>
+      <button class="filter-btn" data-filter="2024" onclick="filterPapers('2024')">2024</button>
+    </div>
+  </div>
+</div>
+
+<!-- Papers Grid -->
+<div class="papers-grid" id="papersGrid">
+  {% assign sorted_papers = site.papers | sort: 'year' | reverse %}
+  {% for paper in sorted_papers %}
+    <div class="paper-item" 
+         data-venue-type="{{ paper.venue_type }}" 
+         data-year="{{ paper.year }}"
+         data-tags="{{ paper.tags | join: ',' }}"
+         data-title="{{ paper.title | downcase }}"
+         data-authors="{{ paper.authors | downcase }}"
+         data-abstract="{{ paper.abstract | downcase }}">
+      {% include paper-card.html paper=paper %}
+    </div>
+  {% endfor %}
+</div>
+
+<!-- No results message -->
+<div id="noResults" style="display: none; text-align: center; padding: 60px 20px; color: #757575;">
+  <h3>No papers found</h3>
+  <p>Try adjusting your search or filter criteria.</p>
+</div>
+
+<!-- JavaScript for Filtering and Search -->
+<script>
+let currentFilter = 'all';
+let currentSearch = '';
+
+// Search functionality
+document.getElementById('searchBox').addEventListener('input', function(e) {
+  currentSearch = e.target.value.toLowerCase();
+  applyFilters();
+});
+
+// Filter functionality
+function filterPapers(filter) {
+  currentFilter = filter;
+  
+  // Update active button
+  document.querySelectorAll('.filter-btn').forEach(btn => {
+    btn.classList.remove('active');
+    if (btn.getAttribute('data-filter') === filter) {
+      btn.classList.add('active');
+    }
+  });
+  
+  applyFilters();
+}
+
+// Apply both search and filter
+function applyFilters() {
+  const papers = document.querySelectorAll('.paper-item');
+  let visibleCount = 0;
+  
+  papers.forEach(paper => {
+    let showPaper = true;
+    
+    // Apply filter
+    if (currentFilter !== 'all') {
+      const venueType = paper.getAttribute('data-venue-type');
+      const year = paper.getAttribute('data-year');
+      
+      if (currentFilter === 'conference' || currentFilter === 'workshop') {
+        showPaper = venueType === currentFilter;
+      } else if (currentFilter === '2024' || currentFilter === '2025') {
+        showPaper = year === currentFilter;
+      }
+    }
+    
+    // Apply search
+    if (showPaper && currentSearch) {
+      const title = paper.getAttribute('data-title');
+      const authors = paper.getAttribute('data-authors');
+      const abstract = paper.getAttribute('data-abstract');
+      const tags = paper.getAttribute('data-tags').toLowerCase();
+      
+      showPaper = title.includes(currentSearch) || 
+                  authors.includes(currentSearch) || 
+                  abstract.includes(currentSearch) ||
+                  tags.includes(currentSearch);
+    }
+    
+    // Show/hide paper
+    if (showPaper) {
+      paper.style.display = 'block';
+      visibleCount++;
+    } else {
+      paper.style.display = 'none';
+    }
+  });
+  
+  // Show/hide no results message
+  document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+}
+
+// Add fade-in animation on load
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.paper-item').forEach((item, index) => {
+    setTimeout(() => {
+      item.style.opacity = '0';
+      item.style.animation = 'fadeIn 0.5s ease-out forwards';
+      item.style.animationDelay = (index * 0.1) + 's';
+    }, 0);
+  });
+});
+</script>
+
+<style>
+.paper-item {
+  opacity: 0;
+}
+</style>
