@@ -1,16 +1,16 @@
 <!-- Image Gallery Component 
-     Usage: {% include image-gallery.html images=page.gallery_images %}
+     Usage: {% include image-gallery.html %}
      
-     Expected format for images:
+     Expected format in page frontmatter:
      gallery_images:
        - src: /assets/images/image1.jpg
          caption: "Description"
        - src: /assets/images/image2.jpg
          caption: "Description"
 -->
-{% if include.images %}
+{% if page.gallery_images %}
 <div class="image-gallery">
-  {% for image in include.images %}
+  {% for image in page.gallery_images %}
     <div class="gallery-item" onclick="openImageModal('{{ image.src }}')">
       <img src="{{ image.src }}" alt="{{ image.caption | default: 'Gallery image' }}" loading="lazy">
       {% if image.caption %}

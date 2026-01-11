@@ -1,49 +1,52 @@
 <!-- Resource Links Component 
-     Usage: {% include resource-links.html paper=page %}
+     Usage: {% include resource-links.html %}
+     This component uses page.* variables directly
 -->
+{% if page.arxiv or page.openreview or page.github or page.pdf or page.demo or page.video %}
 <div class="resource-links">
   <h3>📚 Resources</h3>
   <div class="resource-links-grid">
-    {% if include.paper.arxiv %}
-      <a href="{{ include.paper.arxiv }}" class="resource-link" target="_blank" rel="noopener">
+    {% if page.arxiv %}
+      <a href="{{ page.arxiv }}" class="resource-link" target="_blank" rel="noopener">
         <span class="resource-link-icon">📄</span>
         <span>arXiv Preprint</span>
       </a>
     {% endif %}
     
-    {% if include.paper.openreview %}
-      <a href="{{ include.paper.openreview }}" class="resource-link" target="_blank" rel="noopener">
+    {% if page.openreview %}
+      <a href="{{ page.openreview }}" class="resource-link" target="_blank" rel="noopener">
         <span class="resource-link-icon">📖</span>
         <span>OpenReview</span>
       </a>
     {% endif %}
     
-    {% if include.paper.github %}
-      <a href="{{ include.paper.github }}" class="resource-link" target="_blank" rel="noopener">
+    {% if page.github %}
+      <a href="{{ page.github }}" class="resource-link" target="_blank" rel="noopener">
         <span class="resource-link-icon">💻</span>
         <span>GitHub Code</span>
       </a>
     {% endif %}
     
-    {% if include.paper.pdf %}
-      <a href="{{ include.paper.pdf }}" class="resource-link" target="_blank" rel="noopener">
+    {% if page.pdf %}
+      <a href="{{ page.pdf }}" class="resource-link" target="_blank" rel="noopener">
         <span class="resource-link-icon">📑</span>
         <span>PDF</span>
       </a>
     {% endif %}
     
-    {% if include.paper.demo %}
-      <a href="{{ include.paper.demo }}" class="resource-link" target="_blank" rel="noopener">
+    {% if page.demo %}
+      <a href="{{ page.demo }}" class="resource-link" target="_blank" rel="noopener">
         <span class="resource-link-icon">🎮</span>
         <span>Interactive Demo</span>
       </a>
     {% endif %}
     
-    {% if include.paper.video %}
-      <a href="{{ include.paper.video }}" class="resource-link" target="_blank" rel="noopener">
+    {% if page.video %}
+      <a href="{{ page.video }}" class="resource-link" target="_blank" rel="noopener">
         <span class="resource-link-icon">🎥</span>
         <span>Video</span>
       </a>
     {% endif %}
   </div>
 </div>
+{% endif %}

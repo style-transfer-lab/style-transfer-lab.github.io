@@ -1,12 +1,13 @@
 <!-- BibTeX Citation Component 
-     Usage: {% include bibtex-citation.html bibtex=page.bibtex %}
+     Usage: {% include bibtex-citation.html %}
+     This component uses page.bibtex directly
 -->
-{% if include.bibtex %}
+{% if page.bibtex %}
 <div class="bibtex-section">
   <h3>📋 Citation</h3>
   <div class="bibtex-container">
     <button class="copy-bibtex-btn" onclick="copyBibtex(this)">Copy BibTeX</button>
-    <pre class="bibtex-code"><code>{{ include.bibtex }}</code></pre>
+    <pre class="bibtex-code"><code>{{ page.bibtex }}</code></pre>
   </div>
 </div>
 
