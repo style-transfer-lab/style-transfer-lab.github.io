@@ -2,8 +2,6 @@
 layout: default
 ---
 
-{% include site-header.html %}
-
 <!-- Paper hero section -->
 <div style="background: linear-gradient(135deg, rgba(33, 150, 243, 0.1) 0%, rgba(156, 39, 176, 0.1) 100%); padding: 40px 20px; margin-bottom: 40px;">
   <div style="max-width: 1200px; margin: 0 auto;">
@@ -88,18 +86,22 @@ layout: default
   {% include bibtex-citation.html %}
   
   <!-- Related Papers -->
-  {% if page.related_papers %}
+  {% if page.related_papers and page.related_papers.size > 0 %}
     <div class="related-papers">
       <h3>🔗 Related Papers from Our Lab</h3>
       <div class="related-papers-list">
-        {% for paper_slug in page.related_papers %}
+        {% for paper_slug in page.related_papers limit: 5 %}
+          {% assign found = false %}
           {% for paper in site.papers %}
-            {% assign paper_permalink = paper.permalink | remove: '/papers/' | remove: '/' %}
-            {% if paper_permalink == paper_slug %}
-              <div class="related-paper-item">
-                <a href="{{ paper.url }}">{{ paper.title }}</a>
-              </div>
-            {% endif %}
+            {% unless found %}
+              {% assign paper_id = paper.permalink | remove: '/papers/' | remove: '/' %}
+              {% if paper_id == paper_slug %}
+                <div class="related-paper-item">
+                  <a href="{{ paper.url }}">{{ paper.title }}</a>
+                </div>
+                {% assign found = true %}
+              {% endif %}
+            {% endunless %}
           {% endfor %}
         {% endfor %}
       </div>
@@ -116,5 +118,3 @@ layout: default
     }
   }
 </style>
-
-{% include site-footer.html %}
