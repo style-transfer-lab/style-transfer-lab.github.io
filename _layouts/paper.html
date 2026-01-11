@@ -75,7 +75,54 @@ layout: default
   {% endif %}
   
   <!-- Resource Links -->
-  {% include resource-links.html %}
+  {% if page.arxiv or page.openreview or page.github or page.pdf or page.demo or page.video %}
+  <div class="resource-links">
+    <h3>📚 Resources</h3>
+    <div class="resource-links-grid">
+      {% if page.arxiv %}
+        <a href="{{ page.arxiv }}" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-link-icon">📄</span>
+          <span>arXiv Preprint</span>
+        </a>
+      {% endif %}
+      
+      {% if page.openreview %}
+        <a href="{{ page.openreview }}" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-link-icon">📖</span>
+          <span>OpenReview</span>
+        </a>
+      {% endif %}
+      
+      {% if page.github %}
+        <a href="{{ page.github }}" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-link-icon">💻</span>
+          <span>GitHub Code</span>
+        </a>
+      {% endif %}
+      
+      {% if page.pdf %}
+        <a href="{{ page.pdf }}" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-link-icon">📑</span>
+          <span>PDF</span>
+        </a>
+      {% endif %}
+      
+      {% if page.demo %}
+        <a href="{{ page.demo }}" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-link-icon">🎮</span>
+          <span>Interactive Demo</span>
+        </a>
+      {% endif %}
+      
+      {% if page.video %}
+        <a href="{{ page.video }}" class="resource-link" target="_blank" rel="noopener">
+          <span class="resource-link-icon">🎥</span>
+          <span>Video</span>
+        </a>
+      {% endif %}
+    </div>
+  </div>
+  {% endif %}
   
   <!-- Main Content -->
   <div style="font-size: 1.1em; line-height: 1.8; margin-top: 40px;">
@@ -83,7 +130,30 @@ layout: default
   </div>
   
   <!-- BibTeX Citation -->
-  {% include bibtex-citation.html %}
+  {% if page.bibtex %}
+  <div class="bibtex-section">
+    <h3>📋 Citation</h3>
+    <div class="bibtex-container">
+      <button class="copy-bibtex-btn" onclick="copyBibtex(this)">Copy BibTeX</button>
+      <pre class="bibtex-code"><code>{{ page.bibtex }}</code></pre>
+    </div>
+  </div>
+  
+  <script>
+  function copyBibtex(button) {
+    const bibtexCode = button.nextElementSibling.textContent;
+    navigator.clipboard.writeText(bibtexCode).then(() => {
+      const originalText = button.textContent;
+      button.textContent = '✓ Copied!';
+      button.classList.add('copied');
+      setTimeout(() => {
+        button.textContent = originalText;
+        button.classList.remove('copied');
+      }, 2000);
+    });
+  }
+  </script>
+  {% endif %}
   
   <!-- Related Papers -->
   {% if page.related_papers and page.related_papers.size > 0 %}

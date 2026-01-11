@@ -32,11 +32,11 @@ gem "jekyll-remote-theme"
 - Removed `{% include site-footer.html %}` from bottom of paper.html
 - Optimized the related papers loop to be more efficient
 
-### ✅ Issue 3: Include Parameter Nesting
+### ✅ Issue 3: Include Recursion Issues
 
-**Problem**: Liquid "nesting too deep" error when passing parameters to includes.
+**Problem**: Liquid "stack level too deep" error when using includes in paper.html layout.
 
-**Solution**: Simplified all includes to use `page.*` variables directly instead of passing objects as parameters.
+**Solution**: Inlined the resource links and BibTeX citation code directly into the paper.html layout instead of using separate include files. This completely eliminates any potential circular include issues that can occur with theme interactions.
 
 ---
 
@@ -81,10 +81,11 @@ git push origin main
 ### Files Modified:
 
 1. **Gemfile** - Updated to use `github-pages` gem
-2. **_layouts/paper.html** - Removed redundant header/footer includes, optimized loops
-3. **_includes/resource-links.html** - Simplified to use `page.*` directly
-4. **_includes/bibtex-citation.html** - Simplified to use `page.*` directly  
+2. **_layouts/paper.html** - Removed redundant header/footer includes, inlined resource links and BibTeX sections, optimized loops
+3. **_includes/resource-links.html** - Kept for reference but not used in paper layout (inlined instead)
+4. **_includes/bibtex-citation.html** - Kept for reference but not used in paper layout (inlined instead)
 5. **_includes/image-gallery.html** - Simplified to use `page.*` directly
+6. **_includes/paper-card.html** - Still used in papers index and homepage
 
 ---
 
