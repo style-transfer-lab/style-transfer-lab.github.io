@@ -113,51 +113,6 @@ title: Home
   </div>
 </section>
 
-<!-- Research Themes Section -->
-<section style="margin: 80px 0; background: linear-gradient(135deg, rgba(33, 150, 243, 0.05) 0%, rgba(156, 39, 176, 0.05) 100%); padding: 60px 20px; border-radius: 12px;">
-  <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 20px; color: #212121;">Research Themes</h2>
-  <p style="text-align: center; color: #757575; font-size: 1.2em; margin-bottom: 40px; max-width: 700px; margin-left: auto; margin-right: auto;">
-    Our work bridges theoretical foundations with practical applications in generative AI
-  </p>
-  
-  <div class="themes-grid">
-    <div class="theme-card">
-      <div class="theme-card-icon">🎨</div>
-      <h3 class="theme-card-title">Color & Style Transfer</h3>
-      <p class="theme-card-description">
-        Novel approaches for transferring color distributions and artistic styles using optimal transport, rectified flows, and diffusion guidance.
-      </p>
-      <a href="/research-themes/#color-transfer" class="theme-card-link">Explore Papers →</a>
-    </div>
-    
-    <div class="theme-card">
-      <div class="theme-card-icon">🤖</div>
-      <h3 class="theme-card-title">Generative Models & Diffusion</h3>
-      <p class="theme-card-description">
-        Training-free guidance methods, diffusion-based inpainting, and understanding the geometry of generative model latent spaces.
-      </p>
-      <a href="/research-themes/#generative-models" class="theme-card-link">Explore Papers →</a>
-    </div>
-    
-    <div class="theme-card">
-      <div class="theme-card-icon">👔</div>
-      <h3 class="theme-card-title">Computer Vision Applications</h3>
-      <p class="theme-card-description">
-        Real-world applications including virtual try-on for fashion, creative design tools, and biological data analysis.
-      </p>
-      <a href="/research-themes/#applications" class="theme-card-link">Explore Papers →</a>
-    </div>
-    
-    <div class="theme-card">
-      <div class="theme-card-icon">📐</div>
-      <h3 class="theme-card-title">Theoretical Foundations</h3>
-      <p class="theme-card-description">
-        Mathematical analysis of latent space geometry, Fisher information metrics, and connections to statistical physics.
-      </p>
-      <a href="/research-themes/#theory" class="theme-card-link">Explore Papers →</a>
-    </div>
-  </div>
-</section>
 
 
 <!-- Latest Updates (if blog posts exist) -->

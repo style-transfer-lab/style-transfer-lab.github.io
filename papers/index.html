@@ -4,36 +4,6 @@ title: Research Publications
 permalink: /papers/
 ---
 
-<!-- Statistics Banner -->
-<div class="stats-banner">
-  <h2>Our Research Impact</h2>
-  <div class="stats-items">
-    <div class="stat-item">
-      <span class="stat-number">{{ site.papers | size }}</span>
-      <span class="stat-label">Publications</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">
-        {% assign conference_count = 0 %}
-        {% for paper in site.papers %}
-          {% if paper.venue_type == 'conference' %}
-            {% assign conference_count = conference_count | plus: 1 %}
-          {% endif %}
-        {% endfor %}
-        {{ conference_count }}
-      </span>
-      <span class="stat-label">Top-Tier Conferences</span>
-    </div>
-    <div class="stat-item">
-      <span class="stat-number">
-        {% assign years = site.papers | map: 'year' | uniq | size %}
-        {{ years }}
-      </span>
-      <span class="stat-label">Years Active</span>
-    </div>
-  </div>
-</div>
-
 <!-- Filter Section -->
 <div class="filter-section">
   <div class="filter-controls">
