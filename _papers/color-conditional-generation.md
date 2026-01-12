@@ -2,7 +2,7 @@
 layout: paper
 title: "Color Conditional Generation with Sliced Wasserstein Guidance"
 authors: "Alexander Lobashev, Maria Larchenko, Dmitry Guskov"
-conference: "CVPR 2025"
+conference: "NeurIPS 2025 (Spotlight)"
 venue_type: conference
 year: 2025
 permalink: /papers/color-conditional-generation/
@@ -10,16 +10,15 @@ abstract: "We propose SW-Guidance, a training-free approach for image generation
 image: "/assets/images/sw-guidance-results.png"
 tags: [color-transfer, diffusion-models, generative-models, wasserstein-distance, training-free]
 featured: true
-# Add your links below (remove # to activate):
-# arxiv: https://arxiv.org/abs/...
+arxiv: https://arxiv.org/abs/2503.19034
+github: https://github.com/alobashev/sw-guidance
 # openreview: https://openreview.net/forum?id=...
-# github: https://github.com/...
 # pdf: /assets/papers/color-conditional-generation.pdf
 bibtex: |
-  @inproceedings{lobashev2025swguidance,
+  @article{lobashev2025color,
     title={Color Conditional Generation with Sliced Wasserstein Guidance},
     author={Lobashev, Alexander and Larchenko, Maria and Guskov, Dmitry},
-    booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
+    journal={arXiv preprint arXiv:2503.19034},
     year={2025}
   }
 key_contributions:

@@ -10,16 +10,15 @@ abstract: "This paper presents a novel method for analyzing the latent space geo
 image: "/assets/images/hessian_geometry_result.png"
 tags: [latent-space-geometry, diffusion-models, fisher-information, statistical-physics, theoretical-foundations]
 featured: true
-# Add your links below (remove # to activate):
-# arxiv: https://arxiv.org/abs/...
+arxiv: https://arxiv.org/abs/2506.10632
+github: https://github.com/alobashev/hessian-geometry-of-diffusion-models
 # openreview: https://openreview.net/forum?id=...
-# github: https://github.com/...
 # pdf: /assets/papers/hessian-geometry-latent-space.pdf
 bibtex: |
-  @inproceedings{lobashev2025hessian,
+  @article{lobashev2025hessian,
     title={Hessian Geometry of Latent Space in Generative Models},
     author={Lobashev, Alexander and Guskov, Dmitry and Larchenko, Maria and Tamm, Mikhail},
-    booktitle={Proceedings of the 42nd International Conference on Machine Learning (ICML)},
+    journal={arXiv preprint arXiv:2506.10632},
     year={2025}
   }
 key_contributions:

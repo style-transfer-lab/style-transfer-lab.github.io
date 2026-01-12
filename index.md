@@ -14,7 +14,7 @@ title: Home
     </div>
     
     <p style="text-align: center; color: #757575; font-size: 1.05em; line-height: 1.7; max-width: 700px; margin: 0 auto 30px;">
-      Style Transfer Lab is a collaborative research group specializing in generative AI, with a focus on color transfer, style transfer, and diffusion models. We bridge the gap between theoretical understanding and practical applications, developing innovative methods that appear in top-tier computer vision and machine learning venues.
+      Style Transfer Lab advances the mathematical foundations of generative AI through <strong>optimal transport</strong>, <strong>information geometry</strong>, and <strong>latent space</strong> analysis. We provide rigorous theoretical frameworks while developing practical applications including biological data imputation and lightweight on-device solutions for mobile and AR platforms.
     </p>
     <div style="text-align: center;">
       <a href="/about/" class="btn-primary">Meet Our Team →</a>

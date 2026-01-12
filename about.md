@@ -10,15 +10,20 @@ layout: page
 
 ## Our Mission
 
-Style Transfer Lab is a collaborative research group pushing the boundaries of generative AI. We specialize in developing innovative methods for color transfer, style transfer, and diffusion models that bridge theoretical foundations with practical applications.
+Style Transfer Lab is a collaborative research group advancing the mathematical foundations of generative AI. We specialize in **optimal transport**, **information geometry**, and **latent space** analysis to develop both rigorous theoretical frameworks and practical applications.
 
-Our work spans multiple domains:
-- **Color and Style Transfer**: Novel approaches using optimal transport, rectified flows, and Wasserstein distances
-- **Generative Models**: Training-free guidance methods and latent space geometry analysis
-- **Real-World Applications**: From virtual try-on for fashion to biological data imputation
-- **Theoretical Foundations**: Mathematical analysis connecting generative models to statistical physics
+Our research focuses on:
+- **Optimal Transport Theory**: Novel applications to color transfer, voice conversion, and image harmonization using Monge-Kantorovich solutions
+- **Information Geometry**: Fisher information metrics and geometric analysis of latent spaces in generative models
+- **Latent Space Understanding**: Revealing phase transitions, fractal structures, and geometric properties of diffusion models
+- **Theoretical Foundations**: Mathematical guarantees and convergence analysis bridging statistical physics and machine learning
 
-We publish at premier venues including CVPR, ICML, and AAAI, and are committed to open research and collaboration with the broader AI community.
+We bridge theory and practice with applications including:
+- **Biological Data Imputation**: Reconstructing chromosomal distance matrices using generative methods
+- **Lightweight On-Device Solutions**: Real-time optimal transport algorithms for mobile and AR applications
+- **Training-Free Methods**: Zero-shot approaches that extend existing models without retraining
+
+We publish at premier venues including NeurIPS, ICML, and AAAI, and are committed to open research with publicly available code and datasets.
 
 ---
 
@@ -28,79 +33,64 @@ We publish at premier venues including CVPR, ICML, and AAAI, and are committed t
 
 <!-- Team Member 1 -->
 <div class="team-member">
-  <!-- Uncomment and add photo: <img src="/assets/images/team/member1.jpg" alt="Name" class="team-member-photo"> -->
   <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #2196F3, #9C27B0); margin: 0 auto 20px;"></div>
   
   <h3 class="team-member-name">Alexander Lobashev</h3>
-  <p class="team-member-role">Researcher</p>
+  <p class="team-member-role">Researcher, Glam AI</p>
   
   <p class="team-member-bio">
-    <!-- Add your bio here (2-3 sentences about research interests and background) -->
-    Research interests include generative models, diffusion methods, and their applications to computer vision and style transfer problems.
+    Research interests include optimal transport theory, information geometry, and latent space analysis of generative models. Focuses on developing training-free methods and theoretical frameworks for diffusion models.
   </p>
   
   <p class="team-member-interests">
-    <strong>Research Interests:</strong> Diffusion Models, Style Transfer, Theoretical ML
+    <strong>Research Interests:</strong> Optimal Transport, Information Geometry, Latent Space Analysis
   </p>
   
   <div class="team-member-links">
-    <!-- Add your links (uncomment and replace with actual URLs):
-    <a href="https://scholar.google.com/..." class="team-member-link" target="_blank">📚 Scholar</a>
-    <a href="https://github.com/..." class="team-member-link" target="_blank">💻 GitHub</a>
-    <a href="https://yoursite.com" class="team-member-link" target="_blank">🌐 Website</a>
-    -->
+    <a href="https://openreview.net/profile?id=~Alexander_Lobashev1" class="team-member-link" target="_blank">📚 OpenReview</a>
+    <a href="https://www.linkedin.com/in/alexander-lobashev-45b74b172/" class="team-member-link" target="_blank">💼 LinkedIn</a>
   </div>
 </div>
 
 <!-- Team Member 2 -->
 <div class="team-member">
-  <!-- Uncomment and add photo: <img src="/assets/images/team/member2.jpg" alt="Name" class="team-member-photo"> -->
   <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #9C27B0, #2196F3); margin: 0 auto 20px;"></div>
   
   <h3 class="team-member-name">Maria Larchenko</h3>
-  <p class="team-member-role">Researcher</p>
+  <p class="team-member-role">Researcher, Magicly AI</p>
   
   <p class="team-member-bio">
-    <!-- Add your bio here (2-3 sentences about research interests and background) -->
-    Research interests include color transfer, optimal transport methods, and developing efficient algorithms for style manipulation.
+    Research interests include color transfer, optimal transport methods, and lightweight on-device implementations. Specializes in efficient algorithms for real-time applications in AR and mobile platforms.
   </p>
   
   <p class="team-member-interests">
-    <strong>Research Interests:</strong> Color Transfer, Optimal Transport, Computer Vision
+    <strong>Research Interests:</strong> Color Transfer, Optimal Transport, Efficient Algorithms
   </p>
   
   <div class="team-member-links">
-    <!-- Add your links (uncomment and replace with actual URLs):
-    <a href="https://scholar.google.com/..." class="team-member-link" target="_blank">📚 Scholar</a>
-    <a href="https://github.com/..." class="team-member-link" target="_blank">💻 GitHub</a>
-    <a href="https://yoursite.com" class="team-member-link" target="_blank">🌐 Website</a>
-    -->
+    <a href="https://openreview.net/profile?id=~Maria_Larchenko1" class="team-member-link" target="_blank">📚 OpenReview</a>
+    <a href="https://www.linkedin.com/in/maria-larchenko-b654a936b/" class="team-member-link" target="_blank">💼 LinkedIn</a>
   </div>
 </div>
 
 <!-- Team Member 3 -->
 <div class="team-member">
-  <!-- Uncomment and add photo: <img src="/assets/images/team/member3.jpg" alt="Name" class="team-member-photo"> -->
   <div style="width: 150px; height: 150px; border-radius: 50%; background: linear-gradient(135deg, #2196F3, #9C27B0); margin: 0 auto 20px;"></div>
   
   <h3 class="team-member-name">Dmitry Guskov</h3>
-  <p class="team-member-role">Researcher</p>
+  <p class="team-member-role">Researcher, Glam AI</p>
   
   <p class="team-member-bio">
-    <!-- Add your bio here (2-3 sentences about research interests and background) -->
-    Research interests span generative models, machine learning theory, and applications of AI to creative and scientific domains.
+    Research interests span generative models, latent space geometry, and applications of optimal transport to scientific and creative domains. Works on both theoretical foundations and practical implementations.
   </p>
   
   <p class="team-member-interests">
-    <strong>Research Interests:</strong> Generative AI, ML Theory, Applications
+    <strong>Research Interests:</strong> Generative Models, Latent Space Geometry, Optimal Transport
   </p>
   
   <div class="team-member-links">
-    <!-- Add your links (uncomment and replace with actual URLs):
-    <a href="https://scholar.google.com/..." class="team-member-link" target="_blank">📚 Scholar</a>
-    <a href="https://github.com/..." class="team-member-link" target="_blank">💻 GitHub</a>
-    <a href="https://yoursite.com" class="team-member-link" target="_blank">🌐 Website</a>
-    -->
+    <a href="https://openreview.net/profile?id=~Dmitry_Guskov1" class="team-member-link" target="_blank">📚 OpenReview</a>
+    <a href="https://www.linkedin.com/in/dmitry01guskov/" class="team-member-link" target="_blank">💼 LinkedIn</a>
   </div>
 </div>
 

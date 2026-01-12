@@ -1,32 +1,31 @@
 ---
 layout: paper
 title: "Training-Free Voice Conversion with Factorized Optimal Transport"
-authors: "Alexander Lobashev, Aizhan Yermekova, Maria Larchenko"
-conference: "Under Review"
-venue_type: preprint
+authors: "Alexander Lobashev, Assel Yermekova, Maria Larchenko"
+conference: "Interspeech 2025"
+venue_type: conference
 year: 2025
 permalink: /papers/training-free-voice-conversion/
-abstract: "We introduce a novel training-free approach for voice conversion that leverages factorized optimal transport to transfer vocal characteristics between speakers without requiring parallel data or speaker-specific training. Traditional voice conversion methods rely on extensive training data and speaker-dependent models, limiting their applicability to new speakers or low-resource scenarios. Our method factorizes the optimal transport problem into separable components corresponding to different acoustic attributes (pitch, timbre, prosody), enabling fine-grained control over the conversion process. This factorization allows for zero-shot voice conversion while preserving linguistic content and natural speech quality. We demonstrate state-of-the-art performance on standard benchmarks, with particular advantages in cross-lingual scenarios and conversion to previously unseen target speakers."
+abstract: "This paper introduces Factorized MKL-VC, a training-free modification for kNN-VC pipeline. In contrast with original pipeline, our algorithm performs high quality any-to-any cross-lingual voice conversion with only 5 second of reference audio. MKL-VC replaces kNN regression with a factorized optimal transport map in WavLM embedding subspaces, derived from Monge-Kantorovich Linear solution. Factorization addresses non-uniform variance across dimensions, ensuring effective feature transformation. Experiments on LibriSpeech and FLEURS datasets show MKL-VC significantly improves content preservation and robustness with short reference audio, outperforming kNN-VC. MKL-VC achieves performance comparable to FACodec, especially in cross-lingual voice conversion domain."
 image: "/assets/images/abstract_landing.png"
 tags: [optimal-transport, voice-conversion, audio-processing, training-free, zero-shot]
 featured: false
-# Add your links below (remove # to activate):
-# arxiv: https://arxiv.org/abs/...
+arxiv: https://arxiv.org/abs/2506.09709
 # openreview: https://openreview.net/forum?id=...
 # github: https://github.com/...
 # pdf: /assets/papers/training-free-voice-conversion.pdf
 bibtex: |
-  @article{lobashev2025voiceconversion,
+  @article{lobashev2025training,
     title={Training-Free Voice Conversion with Factorized Optimal Transport},
-    author={Lobashev, Alexander and Yermekova, Aizhan and Larchenko, Maria},
-    journal={arXiv preprint},
+    author={Lobashev, Alexander and Yermekova, Assel and Larchenko, Maria},
+    journal={arXiv preprint arXiv:2506.09709},
     year={2025}
   }
 key_contributions:
-  - "Training-free voice conversion using factorized optimal transport"
-  - "Zero-shot conversion to unseen target speakers"
-  - "Factorized control over pitch, timbre, and prosody"
-  - "State-of-the-art performance without parallel training data"
+  - "Factorized MKL-VC replaces kNN regression with optimal transport map"
+  - "High quality cross-lingual conversion with only 5 seconds of reference audio"
+  - "Derived from Monge-Kantorovich Linear solution"
+  - "Outperforms kNN-VC, comparable to FACodec in cross-lingual domain"
 related_papers:
   - color-transfer-modflows
 ---

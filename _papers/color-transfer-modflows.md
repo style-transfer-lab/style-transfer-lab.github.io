@@ -16,10 +16,13 @@ featured: true
 # github: https://github.com/...
 # pdf: /assets/papers/color-transfer-modflows.pdf
 bibtex: |
-  @inproceedings{larchenko2025modflows,
+  @inproceedings{larchenko2025color,
     title={Color Transfer with Modulated Flows},
     author={Larchenko, Maria and Lobashev, Alexander and Guskov, Dmitry and Palyulin, Vladimir Vladimirovich},
     booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+    volume={39},
+    number={4},
+    pages={4464--4472},
     year={2025}
   }
 key_contributions:
