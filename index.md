@@ -32,7 +32,7 @@ title: Home
       🎯 {{ site.papers | size }} Publications
     </div>
     <div class="stat-item">
-      🏆 Top-Tier Venues: CVPR, ICML, AAAI
+      🏆 Top-Tier Venues: NeurIPS, ICML, AAAI
     </div>
     <div class="stat-item">
       🔬 Theory & Applications

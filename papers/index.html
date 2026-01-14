@@ -22,13 +22,32 @@ permalink: /papers/
 <!-- Quick Links List -->
 <div style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
   <h3 style="margin-top: 0; margin-bottom: 20px; color: #212121; font-size: 1.3em;">Quick Access:</h3>
-  <div style="column-count: 2; column-gap: 30px;">
+  <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
     {% assign sorted_papers = site.papers | sort: 'year' | reverse %}
     {% for paper in sorted_papers %}
-      <div style="margin-bottom: 8px; break-inside: avoid;">
-        <a href="{{ paper.url }}" style="color: #2196F3; text-decoration: none; font-size: 0.95em; line-height: 1.5; display: inline-block;">
-          → {{ paper.title }}
-        </a>
+      <div style="padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #2196F3;">
+        <div style="margin-bottom: 6px;">
+          <a href="{{ paper.url }}" style="color: #2196F3; text-decoration: none; font-size: 1em; font-weight: 500;">
+            → {{ paper.title }}
+          </a>
+          <span style="color: #757575; font-size: 0.9em; margin-left: 8px;">
+            ({{ paper.conference }}, {{ paper.year }})
+          </span>
+        </div>
+        <div style="display: flex; gap: 12px; font-size: 0.85em;">
+          {% if paper.arxiv %}
+            <a href="{{ paper.arxiv }}" target="_blank" style="color: #5E35B1; text-decoration: none;">📄 arXiv</a>
+          {% endif %}
+          {% if paper.github %}
+            <a href="{{ paper.github }}" target="_blank" style="color: #24292e; text-decoration: none;">💻 GitHub</a>
+          {% endif %}
+          {% if paper.openreview %}
+            <a href="{{ paper.openreview }}" target="_blank" style="color: #E53935; text-decoration: none;">📖 OpenReview</a>
+          {% endif %}
+          {% if paper.pdf %}
+            <a href="{{ paper.pdf }}" target="_blank" style="color: #D84315; text-decoration: none;">📑 PDF</a>
+          {% endif %}
+        </div>
       </div>
     {% endfor %}
   </div>

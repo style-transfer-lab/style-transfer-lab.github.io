@@ -38,8 +38,12 @@ navigation_header:
   url: /
 - title: Research
   url: /papers/
+- title: Open Source
+  url: /open-source/
 - title: Team
   url: /about/
+- title: Consulting
+  url: /consulting/
 - title: Blog
   url: /blog/
 

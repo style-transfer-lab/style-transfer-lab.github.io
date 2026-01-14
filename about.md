@@ -47,7 +47,8 @@ We publish at premier venues including NeurIPS, ICML, and AAAI, and are committe
   </p>
   
   <div class="team-member-links">
-    <a href="https://openreview.net/profile?id=~Alexander_Lobashev1" class="team-member-link" target="_blank">📚 OpenReview</a>
+    <a href="https://scholar.google.com/citations?user=YOUR_ID" class="team-member-link" target="_blank">🎓 Scholar</a>
+    <a href="https://openreview.net/profile?id=~Alexander_Lobashev1" class="team-member-link" target="_blank">📖 OpenReview</a>
     <a href="https://www.linkedin.com/in/alexander-lobashev-45b74b172/" class="team-member-link" target="_blank">💼 LinkedIn</a>
   </div>
 </div>
@@ -68,7 +69,8 @@ We publish at premier venues including NeurIPS, ICML, and AAAI, and are committe
   </p>
   
   <div class="team-member-links">
-    <a href="https://openreview.net/profile?id=~Maria_Larchenko1" class="team-member-link" target="_blank">📚 OpenReview</a>
+    <a href="https://scholar.google.com/citations?user=YOUR_ID" class="team-member-link" target="_blank">🎓 Scholar</a>
+    <a href="https://openreview.net/profile?id=~Maria_Larchenko1" class="team-member-link" target="_blank">📖 OpenReview</a>
     <a href="https://www.linkedin.com/in/maria-larchenko-b654a936b/" class="team-member-link" target="_blank">💼 LinkedIn</a>
   </div>
 </div>
@@ -89,7 +91,8 @@ We publish at premier venues including NeurIPS, ICML, and AAAI, and are committe
   </p>
   
   <div class="team-member-links">
-    <a href="https://openreview.net/profile?id=~Dmitry_Guskov1" class="team-member-link" target="_blank">📚 OpenReview</a>
+    <a href="https://scholar.google.com/citations?user=YOUR_ID" class="team-member-link" target="_blank">🎓 Scholar</a>
+    <a href="https://openreview.net/profile?id=~Dmitry_Guskov1" class="team-member-link" target="_blank">📖 OpenReview</a>
     <a href="https://www.linkedin.com/in/dmitry01guskov/" class="team-member-link" target="_blank">💼 LinkedIn</a>
   </div>
 </div>
