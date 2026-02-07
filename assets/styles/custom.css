@@ -6,31 +6,136 @@
 /* ============================================
    Navigation Bar Styling
    ============================================ */
+/* VS Code Night palette */
+:root {
+  --vscode-bg: #1e1e1e;
+  --vscode-border: #2a2a2a;
+  --vscode-fg: #d4d4d4;
+  --vscode-fg-muted: #a6a6a6;
+  --vscode-accent: #007acc;
+}
+
+/* Header strip (robust selectors; Alembic varies slightly by version) */
+header,
 .header,
 .site-header,
 header.header,
 header.site-header {
-  background: linear-gradient(135deg, #3498db, #2980b9) !important;
+  background: var(--vscode-bg) !important;
+  border-bottom: 1px solid var(--vscode-border) !important;
 }
 
+header .container,
 .header .container,
 .site-header .container {
   background: transparent !important;
 }
 
-.header nav a,
-.site-header nav a,
-.header a,
-.site-header a {
-  color: white !important;
+/* Center *everything* in the header: title/logo + nav */
+header .container,
+.header .container,
+.site-header .container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding-top: 14px;
+  padding-bottom: 14px;
 }
 
-.header nav a:hover,
+/* Branding/title centering (covers common Alembic title patterns) */
+header .site-title,
+header .logo,
+header h1,
+header h2,
+.site-header .site-title,
+.site-header .logo,
+.site-header h1,
+.site-header h2 {
+  text-align: center;
+  margin: 0;
+}
+
+/* Nav centering (works for list-based and link-based navs) */
+header nav,
+.site-header nav,
+.header nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+header nav ul,
+.site-header nav ul,
+.header nav ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+header nav a,
+.site-header nav a,
+.header nav a,
+header a,
+.site-header a,
+.header a {
+  color: var(--vscode-fg) !important;
+  text-decoration: none;
+}
+
+header nav a:hover,
 .site-header nav a:hover,
-.header a:hover,
-.site-header a:hover {
-  color: #ecf0f1 !important;
-  opacity: 0.9;
+.header nav a:hover,
+header a:hover,
+.site-header a:hover,
+.header a:hover {
+  color: var(--vscode-accent) !important;
+}
+
+/* Active/current link hint (covers common patterns) */
+header nav a[aria-current="page"],
+.site-header nav a[aria-current="page"],
+.header nav a[aria-current="page"],
+header nav a.active,
+.site-header nav a.active,
+.header nav a.active {
+  color: var(--vscode-accent) !important;
+}
+
+/* Footer strip */
+footer,
+.footer,
+.site-footer,
+footer.footer,
+footer.site-footer {
+  background: var(--vscode-bg) !important;
+  border-top: 1px solid var(--vscode-border) !important;
+  color: var(--vscode-fg) !important;
+}
+
+footer a,
+.footer a,
+.site-footer a {
+  color: var(--vscode-fg) !important;
+}
+
+footer a:hover,
+.footer a:hover,
+.site-footer a:hover {
+  color: var(--vscode-accent) !important;
+}
+
+footer .container,
+.footer .container,
+.site-footer .container {
+  padding-top: 18px;
+  padding-bottom: 18px;
+  text-align: center;
 }
 
 /* ============================================

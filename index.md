@@ -22,11 +22,11 @@ title: Home
 .lab-image-header {
   text-align: center;
   margin: 40px auto 30px;
-  padding: 0 40px;
+  padding-inline: clamp(16px, 4vw, 96px);
 }
 
 .lab-image-header img {
-  max-width: 600px;
+  max-width: 720px;
   width: 100%;
   height: auto;
   border-radius: 8px;
