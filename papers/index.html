@@ -8,45 +8,31 @@ permalink: /papers/
 <div class="filter-section">
   <div class="filter-controls">
     <input type="text" id="searchBox" class="search-box" placeholder="🔍 Search papers by title, authors, or keywords...">
-    
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-filter="all" onclick="filterPapers('all')">All Papers</button>
-      <button class="filter-btn" data-filter="conference" onclick="filterPapers('conference')">Conferences</button>
-      <button class="filter-btn" data-filter="workshop" onclick="filterPapers('workshop')">Workshops</button>
-      <button class="filter-btn" data-filter="2025" onclick="filterPapers('2025')">2025</button>
-      <button class="filter-btn" data-filter="2024" onclick="filterPapers('2024')">2024</button>
-    </div>
   </div>
 </div>
 
 <!-- Quick Links List -->
-<div style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 30px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);">
-  <h3 style="margin-top: 0; margin-bottom: 20px; color: #212121; font-size: 1.3em;">Quick Access:</h3>
-  <div style="display: grid; grid-template-columns: 1fr; gap: 16px;">
+<div class="quick-access-panel" aria-label="Quick access">
+  <div class="quick-access-panel__header">
+    <h3 class="quick-access-panel__title">Quick Access</h3>
+    <span class="quick-access-panel__hint">scroll</span>
+  </div>
+  <div class="quick-access-panel__list" id="quickAccessList">
     {% assign sorted_papers = site.papers | sort: 'year' | reverse %}
     {% for paper in sorted_papers %}
-      <div style="padding: 12px; background: #f8f9fa; border-radius: 8px; border-left: 3px solid #2196F3;">
-        <div style="margin-bottom: 6px;">
-          <a href="{{ paper.url }}" style="color: #2196F3; text-decoration: none; font-size: 1em; font-weight: 500;">
-            → {{ paper.title }}
-          </a>
-          <span style="color: #757575; font-size: 0.9em; margin-left: 8px;">
-            ({{ paper.conference }}, {{ paper.year }})
-          </span>
+      <div class="quick-access-item"
+           data-qa-title="{{ paper.title | downcase }}"
+           data-qa-authors="{{ paper.authors | downcase }}"
+           data-qa-tags="{{ paper.tags | join: ',' | downcase }}">
+        <div class="quick-access-item__row">
+          <a class="quick-access-item__title" href="{{ paper.url }}">→ {{ paper.title }}</a>
+          <span class="quick-access-item__meta">({{ paper.conference }}, {{ paper.year }})</span>
         </div>
-        <div style="display: flex; gap: 12px; font-size: 0.85em;">
-          {% if paper.arxiv %}
-            <a href="{{ paper.arxiv }}" target="_blank" style="color: #5E35B1; text-decoration: none;">📄 arXiv</a>
-          {% endif %}
-          {% if paper.github %}
-            <a href="{{ paper.github }}" target="_blank" style="color: #24292e; text-decoration: none;">💻 GitHub</a>
-          {% endif %}
-          {% if paper.openreview %}
-            <a href="{{ paper.openreview }}" target="_blank" style="color: #E53935; text-decoration: none;">📖 OpenReview</a>
-          {% endif %}
-          {% if paper.pdf %}
-            <a href="{{ paper.pdf }}" target="_blank" style="color: #D84315; text-decoration: none;">📑 PDF</a>
-          {% endif %}
+        <div class="quick-access-item__links">
+          {% if paper.arxiv %}<a href="{{ paper.arxiv }}" target="_blank" rel="noopener">arXiv</a>{% endif %}
+          {% if paper.github %}<a href="{{ paper.github }}" target="_blank" rel="noopener">GitHub</a>{% endif %}
+          {% if paper.openreview %}<a href="{{ paper.openreview }}" target="_blank" rel="noopener">OpenReview</a>{% endif %}
+          {% if paper.pdf %}<a href="{{ paper.pdf }}" target="_blank" rel="noopener">PDF</a>{% endif %}
         </div>
       </div>
     {% endfor %}
@@ -124,12 +110,11 @@ permalink: /papers/
 <!-- No results message -->
 <div id="noResults" style="display: none; text-align: center; padding: 60px 20px; color: #757575;">
   <h3>No papers found</h3>
-  <p>Try adjusting your search or filter criteria.</p>
+  <p>Try adjusting your search query.</p>
 </div>
 
 <!-- JavaScript for Filtering and Search -->
 <script>
-let currentFilter = 'all';
 let currentSearch = '';
 
 // Search functionality
@@ -138,47 +123,21 @@ document.getElementById('searchBox').addEventListener('input', function(e) {
   applyFilters();
 });
 
-// Filter functionality
-function filterPapers(filter) {
-  currentFilter = filter;
-  
-  // Update active button
-  document.querySelectorAll('.filter-btn').forEach(btn => {
-    btn.classList.remove('active');
-    if (btn.getAttribute('data-filter') === filter) {
-      btn.classList.add('active');
-    }
-  });
-  
-  applyFilters();
-}
-
-// Apply both search and filter
+// Apply search to both the main grid and Quick Access
 function applyFilters() {
   const papers = document.querySelectorAll('.paper-item');
+  const quickAccessItems = document.querySelectorAll('.quick-access-item');
   let visibleCount = 0;
   
   papers.forEach(paper => {
     let showPaper = true;
     
-    // Apply filter
-    if (currentFilter !== 'all') {
-      const venueType = paper.getAttribute('data-venue-type');
-      const year = paper.getAttribute('data-year');
-      
-      if (currentFilter === 'conference' || currentFilter === 'workshop') {
-        showPaper = venueType === currentFilter;
-      } else if (currentFilter === '2024' || currentFilter === '2025') {
-        showPaper = year === currentFilter;
-      }
-    }
-    
     // Apply search
-    if (showPaper && currentSearch) {
-      const title = paper.getAttribute('data-title');
-      const authors = paper.getAttribute('data-authors');
-      const abstract = paper.getAttribute('data-abstract');
-      const tags = paper.getAttribute('data-tags').toLowerCase();
+    if (currentSearch) {
+      const title = paper.getAttribute('data-title') || '';
+      const authors = paper.getAttribute('data-authors') || '';
+      const abstract = paper.getAttribute('data-abstract') || '';
+      const tags = (paper.getAttribute('data-tags') || '').toLowerCase();
       
       showPaper = title.includes(currentSearch) || 
                   authors.includes(currentSearch) || 
@@ -197,6 +156,19 @@ function applyFilters() {
   
   // Show/hide no results message
   document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+
+  // Filter Quick Access list (keeps it consistent with search)
+  quickAccessItems.forEach(item => {
+    if (!currentSearch) {
+      item.style.display = 'block';
+      return;
+    }
+    const t = item.getAttribute('data-qa-title') || '';
+    const a = item.getAttribute('data-qa-authors') || '';
+    const tags = item.getAttribute('data-qa-tags') || '';
+    const show = t.includes(currentSearch) || a.includes(currentSearch) || tags.includes(currentSearch);
+    item.style.display = show ? 'block' : 'none';
+  });
 }
 
 // Add fade-in animation on load
