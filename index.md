@@ -1,33 +1,9 @@
 ---
-layout: page
+layout: home
 title: Home
 ---
 
 <style>
-/* Navigation Bar Background Color */
-.header {
-  background: linear-gradient(135deg, #3498db, #2980b9) !important;
-}
-
-.header .container {
-  background: transparent !important;
-}
-
-.header nav a {
-  color: white !important;
-}
-
-/* Break out of theme container constraints */
-.main {
-  max-width: none !important;
-  padding: 0 !important;
-}
-
-.content {
-  max-width: none !important;
-  padding: 0 !important;
-}
-
 /* Scientific Letter Styling */
 .scientific-page {
   font-family: Georgia, 'Times New Roman', serif;
@@ -61,7 +37,7 @@ title: Home
   width: 100%;
   max-width: none;
   margin: 30px 0;
-  padding: 0 80px;
+  padding-inline: clamp(16px, 4vw, 96px);
 }
 
 .about-section h1 {
@@ -82,46 +58,6 @@ title: Home
   line-height: 1.8;
 }
 
-/* Responsive breakpoints */
-@media (max-width: 1200px) {
-  .about-section {
-    padding: 0 60px;
-  }
-}
-
-@media (max-width: 968px) {
-  .about-section {
-    padding: 0 40px;
-  }
-  .lab-image-header {
-    padding: 0 30px;
-  }
-}
-
-@media (max-width: 768px) {
-  .about-section {
-    padding: 0 25px;
-  }
-  .about-section h1 {
-    font-size: 1.8em;
-  }
-  .about-section p {
-    font-size: 1.05em;
-  }
-  .lab-image-header {
-    padding: 0 20px;
-  }
-}
-
-@media (max-width: 480px) {
-  .about-section {
-    padding: 0 15px;
-  }
-  .lab-image-header {
-    padding: 0 15px;
-  }
-}
-
 .two-column-section {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
@@ -129,36 +65,11 @@ title: Home
   width: 100%;
   max-width: none;
   margin: 60px 0;
-  padding: 0 80px;
-}
-
-/* Responsive two-column layout */
-@media (max-width: 1200px) {
-  .two-column-section {
-    padding: 0 60px;
-    gap: 40px;
-  }
-}
-
-@media (max-width: 968px) {
-  .two-column-section {
-    grid-template-columns: 1fr;
-    padding: 0 40px;
-    gap: 50px;
-  }
+  padding-inline: clamp(16px, 4vw, 96px);
 }
 
 @media (max-width: 768px) {
-  .two-column-section {
-    padding: 0 25px;
-  }
-}
-
-@media (max-width: 480px) {
-  .two-column-section {
-    padding: 0 15px;
-    gap: 40px;
-  }
+  .two-column-section { grid-template-columns: 1fr; }
 }
 
 .research-column h2, .contact-column h2 {
