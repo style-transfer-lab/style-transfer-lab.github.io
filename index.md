@@ -3,139 +3,306 @@ layout: page
 title: Home
 ---
 
-<!-- About Our Lab Section - Moved to Top -->
-<section style="margin: 40px 0 60px;">
-  <div style="background: white; padding: 40px 30px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);">
-    <h2 style="text-align: center; font-size: 2em; margin-bottom: 25px; color: #212121;">About Our Lab</h2>
-    
-    <!-- Team Photo -->
-    <div style="text-align: center; margin-bottom: 30px;">
-      <img src="/assets/images/team_gen_small.png" alt="Style Transfer Lab Team" style="max-width: 400px; width: 100%; height: auto; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);">
-    </div>
-    
-    <p style="text-align: center; color: #757575; font-size: 1.05em; line-height: 1.7; max-width: 700px; margin: 0 auto 30px;">
-      Style Transfer Lab advances the mathematical foundations of generative AI through <strong>optimal transport</strong>, <strong>information geometry</strong>, and <strong>latent space</strong> analysis. We provide rigorous theoretical frameworks while developing practical applications including biological data imputation and lightweight on-device solutions for mobile and AR platforms.
-    </p>
-    <div style="text-align: center;">
-      <a href="/about/" class="btn-primary">Meet Our Team →</a>
-    </div>
-  </div>
+<style>
+/* Scientific Letter Styling */
+.scientific-page {
+  font-family: Georgia, 'Times New Roman', serif;
+  color: #2c3e50;
+  line-height: 1.8;
+}
+
+.scientific-page h1, .scientific-page h2, .scientific-page h3 {
+  font-family: Georgia, serif;
+  font-weight: 600;
+  color: #1a252f;
+}
+
+.about-section {
+  max-width: 900px;
+  margin: 50px auto;
+  padding: 0 20px;
+}
+
+.about-section h1 {
+  font-size: 2.2em;
+  text-align: center;
+  margin-bottom: 30px;
+  border-bottom: 2px solid #34495e;
+  padding-bottom: 15px;
+}
+
+.about-section p {
+  font-size: 1.1em;
+  color: #34495e;
+  text-align: justify;
+}
+
+.two-column-section {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  margin: 60px auto;
+  padding: 0 20px;
+}
+
+@media (max-width: 968px) {
+  .two-column-section {
+    grid-template-columns: 1fr;
+  }
+}
+
+.research-column h2, .contact-column h2 {
+  font-size: 1.8em;
+  margin-bottom: 25px;
+  border-bottom: 1px solid #95a5a6;
+  padding-bottom: 10px;
+}
+
+/* Compact Paper Cards */
+.compact-paper-card {
+  background: #ffffff;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  margin-bottom: 25px;
+  overflow: hidden;
+  transition: box-shadow 0.2s;
+}
+
+.compact-paper-card:hover {
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.compact-paper-image {
+  width: 100%;
+  height: 130px;
+  object-fit: cover;
+  background: #ecf0f1;
+}
+
+.compact-paper-content {
+  padding: 18px;
+}
+
+.compact-paper-title {
+  font-size: 1.15em;
+  margin: 0 0 10px 0;
+  font-weight: 600;
+}
+
+.compact-paper-title a {
+  color: #2c3e50;
+  text-decoration: none;
+}
+
+.compact-paper-title a:hover {
+  color: #3498db;
+  text-decoration: underline;
+}
+
+.compact-paper-meta {
+  font-size: 0.9em;
+  color: #7f8c8d;
+  margin-bottom: 8px;
+}
+
+.compact-paper-authors {
+  font-size: 0.95em;
+  color: #555;
+  margin-bottom: 10px;
+  font-style: italic;
+}
+
+.compact-paper-abstract {
+  font-size: 0.95em;
+  color: #5a6c7d;
+  line-height: 1.5;
+  margin-top: 8px;
+}
+
+.venue-tag {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 3px;
+  font-size: 0.85em;
+  font-weight: 500;
+  background: #34495e;
+  color: white;
+  margin-right: 8px;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  background: #f8f9fa;
+  border: 1px solid #d0d0d0;
+  border-radius: 4px;
+  padding: 25px;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+  color: #2c3e50;
+  font-size: 0.95em;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #bdc3c7;
+  border-radius: 3px;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: 0.95em;
+  box-sizing: border-box;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  outline: none;
+  border-color: #3498db;
+}
+
+.submit-btn {
+  width: 100%;
+  padding: 12px;
+  background: #34495e;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-size: 1em;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.submit-btn:hover {
+  background: #2c3e50;
+}
+
+.view-all-link {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: 1px solid #34495e;
+  color: #34495e;
+  text-decoration: none;
+  border-radius: 3px;
+  font-weight: 500;
+  transition: all 0.2s;
+}
+
+.view-all-link:hover {
+  background: #34495e;
+  color: white;
+}
+
+.contact-info {
+  margin-top: 20px;
+  padding-top: 20px;
+  border-top: 1px solid #d0d0d0;
+  font-size: 0.9em;
+  color: #555;
+}
+</style>
+
+<div class="scientific-page">
+
+<!-- About Our Lab - Full Width -->
+<section class="about-section">
+  <h1>Style Transfer Lab</h1>
+  <p>
+    Style Transfer Lab conducts research in optimal transport theory, information geometry, and latent space analysis of generative models. We develop mathematically rigorous frameworks with applications in color transfer, biological data imputation, and lightweight on-device implementations. Our work bridges theoretical foundations with practical deployments, publishing at top-tier venues including NeurIPS, ICML, and AAAI.
+  </p>
 </section>
 
-<!-- Hero Section -->
-<div class="hero-section">
-  <h1>Style Transfer Lab</h1>
-  <p class="tagline">Advancing Generative AI Research Through Color Transfer, Style Transfer, and Diffusion Models</p>
+<!-- Two-Column Layout: Research + Contact -->
+<section class="two-column-section">
   
-  <div class="stats">
-    <div class="stat-item">
-      🎯 {{ site.papers | size }} Publications
-    </div>
-    <div class="stat-item">
-      🏆 Top-Tier Venues: NeurIPS, ICML, AAAI
-    </div>
-    <div class="stat-item">
-      🔬 Theory & Applications
-    </div>
-  </div>
-  
-  <div class="cta-buttons">
-    <a href="/papers/" class="btn-primary">View Our Research</a>
-    <a href="/about/#contact" class="btn-secondary">Collaborate With Us</a>
-  </div>
-</div>
-
-<!-- Featured Papers Section -->
-<section style="margin: 60px 0;">
-  <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: #212121;">Featured Research</h2>
-  
-  <div class="papers-grid">
+  <!-- Left Column: Featured Research -->
+  <div class="research-column">
+    <h2>Featured Research</h2>
+    
     {% assign featured_papers = site.papers | where: "featured", true | sort: 'year' | reverse %}
     {% for paper in featured_papers limit:3 %}
-      <!-- Paper Card (inlined to avoid GitHub Pages include recursion limits) -->
-      <div class="paper-card">
+      <div class="compact-paper-card">
         {% if paper.image %}
-          <img src="{{ paper.image }}" alt="{{ paper.title }}" class="paper-card-image">
+          <img src="{{ paper.image }}" alt="{{ paper.title }}" class="compact-paper-image">
         {% else %}
-          <div class="paper-card-image" style="background: linear-gradient(135deg, #2196F3, #9C27B0);"></div>
+          <div class="compact-paper-image"></div>
         {% endif %}
         
-        <div class="paper-card-content">
-          <h3 class="paper-card-title">
+        <div class="compact-paper-content">
+          <h3 class="compact-paper-title">
             <a href="{{ paper.url }}">{{ paper.title }}</a>
           </h3>
           
-          <div class="paper-card-authors">
+          <div class="compact-paper-meta">
+            {% if paper.conference %}
+              <span class="venue-tag">{{ paper.conference }} {{ paper.year }}</span>
+            {% endif %}
+          </div>
+          
+          <div class="compact-paper-authors">
             {{ paper.authors }}
           </div>
           
-          <div class="paper-card-meta">
-            {% if paper.conference %}
-              {% assign conf_lower = paper.conference | downcase %}
-              {% if conf_lower contains 'cvpr' %}
-                <span class="venue-badge cvpr">CVPR {{ paper.year }}</span>
-              {% elsif conf_lower contains 'icml' %}
-                <span class="venue-badge icml">ICML {{ paper.year }}</span>
-              {% elsif conf_lower contains 'aaai' %}
-                <span class="venue-badge aaai">AAAI {{ paper.year }}</span>
-              {% elsif conf_lower contains 'neurips' %}
-                <span class="venue-badge neurips">NeurIPS {{ paper.year }}</span>
-              {% elsif paper.venue_type == 'conference' %}
-                <span class="venue-badge conference">{{ paper.conference }}</span>
-              {% else %}
-                <span class="venue-badge workshop">{{ paper.conference }}</span>
-              {% endif %}
-            {% endif %}
-            
-            {% if paper.year %}
-              <span class="year-badge">{{ paper.year }}</span>
-            {% endif %}
-          </div>
-          
-          {% if paper.tags %}
-            <div class="tags">
-              {% for tag in paper.tags limit:3 %}
-                <span class="tag">{{ tag }}</span>
-              {% endfor %}
-            </div>
-          {% endif %}
-          
-          <p class="paper-card-abstract">
-            {{ paper.abstract | strip_html | truncatewords: 30 }}
+          <p class="compact-paper-abstract">
+            {{ paper.abstract | strip_html | truncatewords: 20 }}
           </p>
         </div>
       </div>
     {% endfor %}
+    
+    <div style="text-align: center;">
+      <a href="/papers/" class="view-all-link">View All Publications</a>
+    </div>
   </div>
   
-  <div style="text-align: center; margin-top: 40px;">
-    <a href="/papers/" class="btn-primary">See All Publications →</a>
-  </div>
-</section>
-
-
-
-<!-- Latest Updates (if blog posts exist) -->
-{% if site.posts.size > 0 %}
-<section style="margin: 80px 0;">
-  <h2 style="text-align: center; font-size: 2.5em; margin-bottom: 40px; color: #212121;">Latest Updates</h2>
-  
-  <div style="max-width: 800px; margin: 0 auto;">
-    {% for post in site.posts limit:3 %}
-      <div style="background: white; padding: 30px; border-radius: 12px; margin-bottom: 20px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08); border-left: 4px solid #2196F3;">
-        <h3 style="margin-top: 0;">
-          <a href="{{ post.url }}" style="color: #212121; text-decoration: none;">{{ post.title }}</a>
-        </h3>
-        <p style="color: #757575; font-size: 0.9em; margin-bottom: 10px;">{{ post.date | date: "%B %d, %Y" }}</p>
-        {% if post.excerpt %}
-          <p style="color: #616161; line-height: 1.6;">{{ post.excerpt | strip_html | truncatewords: 30 }}</p>
-        {% endif %}
+  <!-- Right Column: Get in Touch -->
+  <div class="contact-column">
+    <h2>Get in Touch</h2>
+    
+    <div class="contact-form">
+      <form action="mailto:your-email@example.com" method="post" enctype="text/plain">
+        
+        <div class="form-group">
+          <label for="name">Name *</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="email">Email *</label>
+          <input type="email" id="email" name="email" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="message">Message *</label>
+          <textarea id="message" name="message" rows="6" required></textarea>
+        </div>
+        
+        <button type="submit" class="submit-btn">Send Message</button>
+      </form>
+      
+      <div class="contact-info">
+        <p><strong>Email:</strong> your-email@example.com</p>
+        <p>We typically respond within 24-48 hours.</p>
       </div>
-    {% endfor %}
+    </div>
+    
+    <div style="margin-top: 30px;">
+      <p style="font-size: 0.95em; color: #555; line-height: 1.6;">
+        Interested in research collaboration, consulting, or visiting positions? We welcome inquiries from academic and industry partners.
+      </p>
+      <a href="/about/" class="view-all-link" style="margin-top: 15px;">Learn More About Our Team</a>
+    </div>
   </div>
   
-  <div style="text-align: center; margin-top: 30px;">
-    <a href="/blog/" class="btn-secondary">View All Posts →</a>
-  </div>
 </section>
-{% endif %}
+
+</div>
