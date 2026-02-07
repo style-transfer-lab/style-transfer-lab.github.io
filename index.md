@@ -4,6 +4,19 @@ title: Home
 ---
 
 <style>
+/* Navigation Bar Background Color */
+.header {
+  background: linear-gradient(135deg, #3498db, #2980b9) !important;
+}
+
+.header .container {
+  background: transparent !important;
+}
+
+.header nav a {
+  color: white !important;
+}
+
 /* Scientific Letter Styling */
 .scientific-page {
   font-family: Georgia, 'Times New Roman', serif;
@@ -17,10 +30,29 @@ title: Home
   color: #1a252f;
 }
 
+.lab-image-header {
+  text-align: center;
+  margin: 40px 0 30px;
+}
+
+.lab-image-header img {
+  max-width: 500px;
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
 .about-section {
-  max-width: 900px;
-  margin: 50px auto;
-  padding: 0 20px;
+  max-width: 100%;
+  margin: 30px auto;
+  padding: 0 60px;
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 0 20px;
+  }
 }
 
 .about-section h1 {
@@ -35,6 +67,8 @@ title: Home
   font-size: 1.1em;
   color: #34495e;
   text-align: justify;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .two-column-section {
@@ -212,6 +246,11 @@ title: Home
 </style>
 
 <div class="scientific-page">
+
+<!-- Lab Team Image -->
+<div class="lab-image-header">
+  <img src="/assets/images/team_gen_small.png" alt="Style Transfer Lab Team">
+</div>
 
 <!-- About Our Lab - Full Width -->
 <section class="about-section">

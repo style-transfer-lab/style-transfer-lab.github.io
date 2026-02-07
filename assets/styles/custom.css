@@ -4,6 +4,26 @@
    ============================================ */
 
 /* ============================================
+   Navigation Bar Styling
+   ============================================ */
+.header {
+  background: linear-gradient(135deg, #3498db, #2980b9) !important;
+}
+
+.header .container {
+  background: transparent !important;
+}
+
+.header nav a {
+  color: white !important;
+}
+
+.header nav a:hover {
+  color: #ecf0f1 !important;
+  opacity: 0.9;
+}
+
+/* ============================================
    Color Scheme & Variables
    ============================================ */
 :root {
