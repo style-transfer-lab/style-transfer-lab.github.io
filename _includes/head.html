@@ -1,0 +1,29 @@
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <title>
+    {%- if page.title and page.title != site.title -%}
+      {{ page.title }} | {{ site.title }}
+    {%- else -%}
+      {{ site.title }}
+    {%- endif -%}
+  </title>
+
+  {%- seo -%}
+
+  {%- comment -%}
+  Alembic (remote_theme) typically compiles a main stylesheet at /assets/styles.css.
+  If present, load it so theme header/footer/layout styling works on our custom layout.
+  {%- endcomment -%}
+  <link rel="stylesheet" href="{{ '/assets/styles.css' | relative_url }}">
+
+  {%- comment -%}
+  Our custom head include loads:
+  - custom CSS (custom.css, responsive-enhancements.css)
+  - interactions.js
+  - viewport meta tag
+  {%- endcomment -%}
+  {% include site-custom-head.html %}
+</head>
+
