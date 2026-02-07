@@ -1,0 +1,20 @@
+<footer class="site-footer" role="contentinfo">
+  <div class="site-footer__container">
+    <nav class="site-footer__nav" aria-label="Footer">
+      <ul class="site-footer__nav-list">
+        {% for item in site.navigation_footer %}
+          <li class="site-footer__nav-item">
+            <a class="site-footer__nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+
+    <div class="site-footer__meta">
+      <span>© {{ site.time | date: '%Y' }} {{ site.title }}.</span>
+      <span class="site-footer__meta-sep">·</span>
+      <span>Research group (non-commercial).</span>
+    </div>
+  </div>
+</footer>
+

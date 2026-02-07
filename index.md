@@ -19,20 +19,6 @@ title: Home
   color: #1a252f;
 }
 
-.lab-image-header {
-  text-align: center;
-  margin: 40px auto 30px;
-  padding-inline: clamp(16px, 4vw, 96px);
-}
-
-.lab-image-header img {
-  max-width: 720px;
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-}
-
 .about-section {
   width: 100%;
   max-width: none;
@@ -232,11 +218,6 @@ title: Home
 </style>
 
 <div class="scientific-page">
-
-<!-- Lab Team Image -->
-<div class="lab-image-header">
-  <img src="/assets/images/team_gen_small.png" alt="Style Transfer Lab Team">
-</div>
 
 <!-- About Our Lab - Full Width -->
 <section class="about-section">

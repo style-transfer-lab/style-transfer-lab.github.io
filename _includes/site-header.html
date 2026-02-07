@@ -1,0 +1,27 @@
+<header class="site-header" role="banner">
+  <div class="site-header__container">
+    <a class="site-header__brand" href="{{ '/' | relative_url }}" aria-label="{{ site.title }} home">
+      <img
+        class="site-header__emblem"
+        src="{{ '/assets/images/team_gen_small.png' | relative_url }}"
+        alt="Style Transfer Lab emblem"
+        width="36"
+        height="36"
+        loading="eager"
+        decoding="async"
+      >
+      <span class="site-header__title">{{ site.title }}</span>
+    </a>
+
+    <nav class="site-header__nav" aria-label="Primary">
+      <ul class="site-header__nav-list">
+        {% for item in site.navigation_header %}
+          <li class="site-header__nav-item">
+            <a class="site-header__nav-link" href="{{ item.url | relative_url }}">{{ item.title }}</a>
+          </li>
+        {% endfor %}
+      </ul>
+    </nav>
+  </div>
+</header>
+

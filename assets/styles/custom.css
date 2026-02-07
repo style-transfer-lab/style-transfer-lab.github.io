@@ -44,6 +44,57 @@ header .container,
   padding-bottom: 14px;
 }
 
+/* Our local header include */
+.site-header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px clamp(16px, 4vw, 40px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+}
+
+.site-header__brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  color: var(--vscode-fg) !important;
+  text-decoration: none;
+}
+
+.site-header__emblem {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  box-shadow: 0 1px 6px rgba(0, 0, 0, 0.35);
+}
+
+.site-header__title {
+  font-weight: 650;
+  letter-spacing: 0.2px;
+}
+
+.site-header__nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 18px;
+  padding: 0;
+  margin: 0;
+}
+
+.site-header__nav-link {
+  color: var(--vscode-fg) !important;
+  text-decoration: none;
+}
+
+.site-header__nav-link:hover {
+  color: var(--vscode-accent) !important;
+}
+
 /* Branding/title centering (covers common Alembic title patterns) */
 header .site-title,
 header .logo,
@@ -136,6 +187,42 @@ footer .container,
   padding-top: 18px;
   padding-bottom: 18px;
   text-align: center;
+}
+
+/* Our local footer include */
+.site-footer__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 18px clamp(16px, 4vw, 40px);
+  text-align: center;
+}
+
+.site-footer__nav-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  padding: 0;
+  margin: 0 0 10px 0;
+}
+
+.site-footer__nav-link {
+  color: var(--vscode-fg) !important;
+  text-decoration: none;
+}
+
+.site-footer__nav-link:hover {
+  color: var(--vscode-accent) !important;
+}
+
+.site-footer__meta {
+  color: var(--vscode-fg-muted);
+  font-size: 0.95em;
+}
+
+.site-footer__meta-sep {
+  margin: 0 8px;
 }
 
 /* ============================================
