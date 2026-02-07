@@ -17,11 +17,24 @@ title: Home
   color: white !important;
 }
 
+/* Break out of theme container constraints */
+.main {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+.content {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
 /* Scientific Letter Styling */
 .scientific-page {
   font-family: Georgia, 'Times New Roman', serif;
   color: #2c3e50;
   line-height: 1.8;
+  width: 100%;
+  max-width: none;
 }
 
 .scientific-page h1, .scientific-page h2, .scientific-page h3 {
@@ -32,11 +45,12 @@ title: Home
 
 .lab-image-header {
   text-align: center;
-  margin: 40px 0 30px;
+  margin: 40px auto 30px;
+  padding: 0 40px;
 }
 
 .lab-image-header img {
-  max-width: 500px;
+  max-width: 600px;
   width: 100%;
   height: auto;
   border-radius: 8px;
@@ -44,15 +58,10 @@ title: Home
 }
 
 .about-section {
-  max-width: 100%;
-  margin: 30px auto;
-  padding: 0 60px;
-}
-
-@media (max-width: 768px) {
-  .about-section {
-    padding: 0 20px;
-  }
+  width: 100%;
+  max-width: none;
+  margin: 30px 0;
+  padding: 0 80px;
 }
 
 .about-section h1 {
@@ -67,22 +76,88 @@ title: Home
   font-size: 1.1em;
   color: #34495e;
   text-align: justify;
-  max-width: 1200px;
-  margin: 0 auto;
+  width: 100%;
+  max-width: none;
+  margin: 0;
+  line-height: 1.8;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 1200px) {
+  .about-section {
+    padding: 0 60px;
+  }
+}
+
+@media (max-width: 968px) {
+  .about-section {
+    padding: 0 40px;
+  }
+  .lab-image-header {
+    padding: 0 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-section {
+    padding: 0 25px;
+  }
+  .about-section h1 {
+    font-size: 1.8em;
+  }
+  .about-section p {
+    font-size: 1.05em;
+  }
+  .lab-image-header {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-section {
+    padding: 0 15px;
+  }
+  .lab-image-header {
+    padding: 0 15px;
+  }
 }
 
 .two-column-section {
   display: grid;
   grid-template-columns: 1.5fr 1fr;
-  gap: 40px;
-  max-width: 1200px;
-  margin: 60px auto;
-  padding: 0 20px;
+  gap: 50px;
+  width: 100%;
+  max-width: none;
+  margin: 60px 0;
+  padding: 0 80px;
+}
+
+/* Responsive two-column layout */
+@media (max-width: 1200px) {
+  .two-column-section {
+    padding: 0 60px;
+    gap: 40px;
+  }
 }
 
 @media (max-width: 968px) {
   .two-column-section {
     grid-template-columns: 1fr;
+    padding: 0 40px;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .two-column-section {
+    padding: 0 25px;
+  }
+}
+
+@media (max-width: 480px) {
+  .two-column-section {
+    padding: 0 15px;
+    gap: 40px;
   }
 }
 
@@ -296,8 +371,8 @@ title: Home
           </p>
         </div>
       </div>
-    {% endfor %}
-    
+{% endfor %}
+
     <div style="text-align: center;">
       <a href="/papers/" class="view-all-link">View All Publications</a>
     </div>
