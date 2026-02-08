@@ -14,6 +14,13 @@
       <span>© {{ site.time | date: '%Y' }} {{ site.title }}.</span>
       <span class="site-footer__meta-sep">·</span>
       <span>Research group (non-commercial).</span>
+      {% if site.email %}
+        <span class="site-footer__meta-sep">·</span>
+        <span>
+          Contact:
+          <a class="site-footer__nav-link" href="mailto:{{ site.email }}">{{ site.email }}</a>
+        </span>
+      {% endif %}
     </div>
   </div>
 </footer>

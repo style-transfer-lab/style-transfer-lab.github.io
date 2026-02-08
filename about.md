@@ -121,7 +121,7 @@ From initial concept to working implementation, we deliver complete solutions wi
 
 ---
 
-## Collaboration & Opportunities {#contact}
+## Collaboration & Opportunities
 
 We are actively seeking opportunities for:
 
@@ -151,29 +151,6 @@ We are actively seeking opportunities for:
 <div style="background: white; padding: 20px; border-radius: 8px; border-left: 4px solid #9C27B0;">
 <strong>🔬 Applications</strong>
 <p style="margin: 10px 0 0 0; color: #757575; font-size: 0.95em;">Fashion AI, creative tools, scientific computing</p>
-</div>
-
-</div>
-
-### Get in Touch
-
-<div style="background: white; padding: 40px; border-radius: 12px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); text-align: center; margin: 40px 0;">
-
-<p style="font-size: 1.2em; color: #212121; margin-bottom: 20px;">
-Interested in collaborating? We'd love to hear from you.
-</p>
-
-<!-- Add your contact information here:
-<p style="font-size: 1.1em; margin: 10px 0;">
-📧 Email: <a href="mailto:your-email@example.com">your-email@example.com</a>
-</p>
-<p style="font-size: 1.1em; margin: 10px 0;">
-🐦 Twitter: <a href="https://twitter.com/..." target="_blank">@YourLabTwitter</a>
-</p>
--->
-
-<div style="margin-top: 30px;">
-<a href="/papers/" class="btn-primary">View Our Research</a>
 </div>
 
 </div>

@@ -25,6 +25,7 @@ plugins:
 baseurl: ''
 title: 'Style Transfer Lab'
 description: 'Advancing Generative AI Research Through Color Transfer, Style Transfer, and Diffusion Models'
+email: your-email@example.com
 permalink: pretty
 # logo: "https://www.gravatar.com/avatar/6c0377abcf4da91cdd35dea4554b2a4c?s=52"
 

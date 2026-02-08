@@ -15,7 +15,7 @@ title: Home
           </p>
           <div class="landing-hero__ctas">
             <a class="landing-btn landing-btn--primary" href="/papers/">Explore our research</a>
-            <a class="landing-btn landing-btn--secondary" href="/about/#contact">Collaborate with us</a>
+            <a class="landing-btn landing-btn--secondary" href="#contact">Collaborate with us</a>
           </div>
         </div>
 
@@ -102,35 +102,25 @@ title: Home
   </section>
 
   <!-- CONTACT -->
-  <section class="landing-section" aria-label="Contact">
+  <section class="landing-section" id="contact" aria-label="Contact">
     <div class="landing-container">
       <div class="landing-section__header">
         <h2 class="landing-section__title">Get in touch</h2>
       </div>
       <p class="landing-section__subtitle">
-        If you’re interested in collaboration, visiting positions, or consulting, send us a message—we’ll respond as soon as possible.
+        If you’re interested in collaboration, visiting positions, or consulting, email us and include a short summary of your project.
       </p>
 
       <div class="landing-contact" style="margin-top: 18px;">
         <div class="landing-card landing-card__pad">
-          <form class="landing-form" action="mailto:your-email@example.com" method="post" enctype="text/plain">
-            <div class="landing-form__row">
-              <label for="name">Name *</label>
-              <input type="text" id="name" name="name" required>
-            </div>
-            <div class="landing-form__row">
-              <label for="email">Email *</label>
-              <input type="email" id="email" name="email" required>
-            </div>
-            <div class="landing-form__row">
-              <label for="message">Message *</label>
-              <textarea id="message" name="message" rows="6" required></textarea>
-            </div>
-            <button class="landing-form__submit" type="submit">Send message</button>
-          </form>
-          <p style="margin: 12px 0 0; color: var(--text-secondary); font-size: 0.95em;">
-            Email: <strong>your-email@example.com</strong>
+          <p style="margin-top: 0; font-size: 1.05em;">
+            Email: <a class="landing-link" href="mailto:{{ site.email | default: 'your-email@example.com' }}">{{ site.email | default: 'your-email@example.com' }}</a>
           </p>
+          <ul style="margin: 12px 0 0; padding-left: 18px; color: var(--text-secondary);">
+            <li>Suggested subject: <code>Collaboration inquiry</code></li>
+            <li>Include: problem statement, timeline, and relevant links (paper/code).</li>
+            <li>We typically respond within 24–48 hours.</li>
+          </ul>
         </div>
 
         <div class="landing-card landing-card__pad">
